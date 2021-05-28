@@ -14,11 +14,15 @@ mix
       "./public/**/*.html",
       "./public/css/**/*.css",
       "./public/js/**/*.js",
+      "./fonts/**/*.css",
+      "./resources/index.html",
     ],
   });
 
+mix.copyDirectory("resources/assets/fonts", "public/fonts");
+
 mix.html({
-  htmlRoot: "./src/index.html", // Your html root file(s)
+  htmlRoot: "./resources/index.html", // Your html root file(s)
   output: "public", // The html output folder
   // inject: true,
   // partialRoot: "./src/partials", // default partial path

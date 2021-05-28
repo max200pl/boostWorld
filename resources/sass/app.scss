@@ -1,3 +1,20 @@
+@font-face {
+  font-family: "TT Interfaces";
+  src: url("/fonts/ttinterface/TTInterfaces-SemiBold.eot");
+  src: local("TT Interfaces SemiBold"), local("TTInterfaces-SemiBold"),
+    url("/fonts/ttinterface/TTInterfaces-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/ttinterface/TTInterfaces-SemiBold.eot.woff2") format("woff2"),
+    url("/fonts/ttinterface/TTInterfaces-SemiBold.eot.woff") format("woff"),
+    url("/fonts/ttinterface/TTInterfaces-SemiBold.eot.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: 'TT Interfaces' , sans-serif;
+  font-size: 18px;
+}
+
 .container {
   border: 1px red solid;
   width: 1220px;
@@ -71,4 +88,13 @@
 
 .active:after {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.sidebar__list {
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #E4E5ED;
+  padding: 18px;
+  display: grid;
+  gap: 30px;
 }
