@@ -3,7 +3,7 @@
 // window.$ = window.jQuery = require("jquery");
 
 // $("body").append("<p>Added from JQUERY3</p>");
-var acc = document.getElementsByClassName("accordion");
+var acc = document.getElementsByClassName("main__accordions-button");
 var i;
 
 for (i = 0; i < acc.length; i++) {
