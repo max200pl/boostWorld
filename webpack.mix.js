@@ -1,4 +1,5 @@
 let mix = require("laravel-mix");
+require("mix-html-builder");
 mix.override((config) => {
   delete config.watchOptions;
 }); // игнорирование node_modules файлов на просмотр изменений
@@ -15,3 +16,14 @@ mix
       "./public/js/**/*.js",
     ],
   });
+
+mix.html({
+  htmlRoot: "./src/index.html", // Your html root file(s)
+  output: "public", // The html output folder
+  // inject: true,
+  // partialRoot: "./src/partials", // default partial path
+  // layoutRoot: "./src/layouts", // default partial path
+  minify: {
+    removeComments: true,
+  },
+});
