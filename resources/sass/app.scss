@@ -47,10 +47,14 @@ body {
 
 .main {
   grid-area: main;
+  margin-left: 20px;
 }
+
+
 
 /* Style the buttons that are used to open and close the accordion panel */
 .main__accordions-button {
+  border-radius: 4px;
   font-weight: 600;
   background-color: #ffffff;
   color: #15193f;
@@ -60,13 +64,13 @@ body {
   text-align: left;
   border: 1px solid #e4e5ed;
   outline: none;
-  transition: 0.4s;
+  transition: 0.5s;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
 .main__accordions-button:hover {
-  background-color: #ccc;
+  background-color: #fff;
 }
 
 /* Style the accordion panel. Note: hidden by default */
@@ -98,6 +102,11 @@ body {
   padding: 18px;
   display: grid;
   gap: 30px;
+}
+.sidebar__list-item {
+  color: #15193F;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 // Accordions
