@@ -1,0 +1,29 @@
+.faq-list__title {
+    @include xs-md {
+        font-size: $size-l;
+        padding: 12px 0 26px;
+    }
+
+
+    padding-top: 40px;
+    padding-bottom: 36px;
+    max-width: 623px;
+    font-family: "TT Interfaces", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: $dop-text;
+    line-height: 0.9;
+
+    & span {
+        color: $accent_1;
+    }
+}
+
+.aside-menu__naw {
+    max-width: 240px;
+    margin-left: 20px;
+    border: 1px solid $line-light;
+    padding: 18px 19px 21px;
+    background: $white;
+    border-radius: $radius;
+}
