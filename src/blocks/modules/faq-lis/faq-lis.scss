@@ -1,3 +1,5 @@
+
+/* FAQ-LIST__TITLE */
 .faq-list__title {
     @include xs-md {
         font-size: $size-l;
@@ -22,8 +24,14 @@
 .faq-list__aside-menu {
     background-color: $white;
 }
+/* /FAQ-LIST__TITLE */
 
+/* ASIDE-MENU__NAW */
 .aside-menu__naw {
+    @include xs-md {
+        max-width: 100%;
+    }
+
     max-width: 240px;
     margin-left: 20px;
     border: 1px solid $line-light;
@@ -36,12 +44,23 @@
         padding-bottom: 16px;
         width: 100%;
 
-        & .aside-menu__naw-link a {
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        & .aside-menu__naw-link {
             font-family: "TT Interfaces", sans-serif;
             font-weight: 400;
             font-size: $size-m;
-            line-height: 0.9;
+            line-height: 0.8;
             color: $dop-text;
+            transition: all 0.1s;
+
+            &:hover {
+                font-weight: 600;
+                text-decoration-color: $accent_1;
+            }
         }
     }
 }
+/* /ASIDE-MENU__NAW */
