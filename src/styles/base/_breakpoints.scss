@@ -1,28 +1,10 @@
-/* Large Devices, Wide Screens */
-$screen-xxl: 1499px;
-
-/* Large Devices, Wide Screens */
-$screen-xl: 1199px;
-
-/* Medium Devices, Desktops */
-$screen-lg: 992px;
-
-/* Small Devices, Tablets */
-$screen-md: 767px;
-
-/* Extra Small Devices, Phones */
-$screen-sm: 480px;
-
-/* Custom, iPhone Retina */
-$screen-xs: 0;
-
 @mixin xxl { /* свыше $screen-xxl: 1499px;*/
     @media (min-width: $screen-xxl) {
         @content;
     }
 }
 
-@mixin xl { /* свыше $screen-xl: 1199px;*/
+@mixin xl { /* свыше $screen-xl: 1219px;*/
     @media (min-width: $screen-xl) {
         @content;
     }
@@ -34,13 +16,13 @@ $screen-xs: 0;
     }
 }
 
-@mixin md { /* свыше $screen-md: 767px;*/
+@mixin md { /* свыше $screen-md: 719px;*/
     @media (min-width: $screen-md) {
         @content;
     }
 }
 
-@mixin sm { /* свыше $screen-sm: 480px; */
+@mixin sm { /* свыше $screen-sm: 320px; */
     @media (min-width: $screen-sm) {
         @content;
     }
@@ -52,31 +34,31 @@ $screen-xs: 0;
     }
 }
 
-@mixin xl-xxl { /* от 1199px до 1499px; */
+@mixin xl-xxl { /* от 1219px до 1499px; */
     @media (min-width: $screen-xl) and (max-width: $screen-xxl) {
         @content;
     }
 }
 
-@mixin lg-xl { /* от 992px до 1199px */
+@mixin lg-xl { /* от 992px до 1219px */
     @media (min-width: $screen-lg) and (max-width: $screen-xl) {
         @content;
     }
 }
 
-@mixin md-xl { /* от  767px до  1199px*/
+@mixin md-xl { /* от  720px до  1219px*/
     @media (min-width: $screen-md) and (max-width: $screen-xl) {
         @content;
     }
 }
 
-@mixin sm-lg { /* от  480px до  992px*/
+@mixin sm-lg { /* от  320px до  992px*/
     @media (min-width: $screen-sm) and (max-width: $screen-lg) {
         @content;
     }
 }
 
-@mixin md-lg { /* от  767 до  992px*/
+@mixin md-lg { /* от  719 до  992px*/
     @media (min-width: $screen-md) and (max-width: $screen-lg) {
         @content;
     }
@@ -88,19 +70,19 @@ $screen-xs: 0;
     }
 }
 
-@mixin sm-md { /* от  480 до  767px*/
+@mixin sm-md { /* от  320 до  720px*/
     @media (min-width: $screen-sm) and (max-width: $screen-md) {
         @content;
     }
 }
 
-@mixin xs-md { /* от  0 до  767px*/
+@mixin xs-md { /* от  0 до  720px*/
     @media (min-width: $screen-xs) and (max-width: $screen-md) {
         @content;
     }
 }
 
-@mixin xs-sm { /* от  0 до  480px*/
+@mixin xs-sm { /* от  0 до  320px*/
     @media (min-width: $screen-xs) and (max-width: $screen-sm) {
         @content;
     }

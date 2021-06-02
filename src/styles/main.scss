@@ -1,7 +1,14 @@
 @import "helpers/variables";
+
 @import "helpers/mixins";
+
 @import "helpers/functions";
+
 @import "vendor/libs";
+
+@import "base/breakpoints";
+@import "base/container";
 @import "base/fonts";
+
 @import "base/general";
 @import "../blocks/modules";
