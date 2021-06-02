@@ -19,6 +19,10 @@
     }
 }
 
+.faq-list__aside-menu {
+    background-color: $white;
+}
+
 .aside-menu__naw {
     max-width: 240px;
     margin-left: 20px;
@@ -26,4 +30,18 @@
     padding: 18px 19px 21px;
     background: $white;
     border-radius: $radius;
+    text-decoration-color: $accent_1;
+
+    & .aside-menu__naw-list {
+        padding-bottom: 16px;
+        width: 100%;
+
+        & .aside-menu__naw-link a {
+            font-family: "TT Interfaces", sans-serif;
+            font-weight: 400;
+            font-size: $size-m;
+            line-height: 0.9;
+            color: $dop-text;
+        }
+    }
 }
