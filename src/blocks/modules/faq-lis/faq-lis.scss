@@ -16,10 +16,8 @@
 /* FAQ-LIST__TITLE */
 .faq-list__title {
     @include xs-md {
-        font-size: $size-l;
         padding: 12px 0 26px;
     }
-
 
     padding-top: 40px;
     padding-bottom: 36px;
