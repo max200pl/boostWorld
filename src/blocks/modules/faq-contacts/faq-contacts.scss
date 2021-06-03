@@ -38,8 +38,9 @@
         padding: 12px 15px;
         border-radius: $radius;
         background-color: $white;
+        cursor: pointer;
 
-        .feedback__links-href {
+        .feedback__links-text {
             padding-left: 10px;
             color: $dop-text;
             font-size: $size-x;
