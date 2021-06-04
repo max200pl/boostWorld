@@ -1,0 +1,136 @@
+.purchase-status {
+    background-color: $white;
+
+    .purchase-status__wrapper {
+        @include border;
+        @include xs-md {
+            width: 100%;
+            border: none;
+            padding: 20px 15px 22px;
+        }
+
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 31px 25px 30px 26px;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+
+        .purchase-status__header {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-bottom: 24px;
+
+            .purchase-status__img-status {
+                position: relative;
+                width: 43px;
+                height: 43px;
+                background-color: $accent_2;
+                border-radius: $radius;
+
+                & object {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-right: -50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            /* ORDER-NUM */
+            .order-num {
+                display: flex;
+                vertical-align: center;
+                margin-left: 13px;
+                max-width: 190px;
+                max-height: 43px;
+                border: 1px solid $line-light;
+                border-radius: $radius;
+                padding: 13px 26px 13px 27px;
+
+                & > .order-num__text {
+                    font-family: "SF Pro Display", serif;
+                    font-weight: 400;
+                    font-size: $size-x;
+                    line-height: 120%;
+                    letter-spacing: -0.01em;
+                    color: $dop-text;
+
+                    + .order-num__id-order {
+                        margin-left: 3px;
+                        font-weight: 600;
+                    }
+                }
+            } /* /order-num */
+        } /* /purchase-status__header */
+
+        /*  WISHES-TEXT */
+        .wishes-text {
+            margin-bottom: 28px;
+
+            .wishes-text__title {
+                max-width: 300px;
+                margin-bottom: 16px;
+                font-family: "TT Interfaces", serif;
+                font-weight: 600;
+                font-size: $size-xl;
+                line-height: 86%;
+                letter-spacing: -0.035em;
+                color: $dop-text;
+            }
+
+            .wishes-text__subtitle {
+                @include SFRegular;
+
+                max-width: 295px;
+            }
+        } /*  /wishes-text */
+
+        .feedback__links {
+            @include xs-lg {
+                flex-direction: column;
+            }
+
+
+            display: flex;
+            justify-content: space-between;
+            margin: 0 -7px;
+
+            .feedback__links-item {
+                @include xs-lg {
+                    margin-bottom: 12px;
+                    max-width: 100%;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+
+                @include border;
+
+                display: flex;
+                align-items: center;
+                min-width: 180px;
+                max-width: 185px;
+                margin: 0 7px;
+                padding: 12px 15px;
+                background-color: $white;
+                cursor: pointer;
+
+                .feedback__links-text {
+                    padding-left: 10px;
+                    color: $dop-text;
+                    font-size: $size-x;
+                    font-family: "SF Pro Display", serif;
+                    font-weight: 400;
+                    line-height: 1;
+                    letter-spacing: -0.01em;
+                    text-decoration: underline;
+                }
+            }
+        } /* /feedback__links */
+    } /* purchase-status__wrapper */
+} /* /purchase-status  */
