@@ -1,29 +1,29 @@
-.purchase-status {
+.purchase-success {
+    background: url(../../../img/status-purchase_success/purchase-success__bg.jpg);
     background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 
-    .purchase-status__wrapper {
+    .purchase-success__wrapper {
         @include border;
         @include xs-md {
             width: 100%;
             border: none;
             padding: 20px 15px 22px;
         }
+        background-color: $white;
 
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
         padding: 31px 25px 30px 26px;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
 
-        .purchase-status__header {
+        .purchase-success__header {
             display: flex;
             align-items: center;
             justify-content: left;
             margin-bottom: 24px;
 
-            .purchase-status__img-status {
+            .purchase-success__img-status {
                 position: relative;
                 width: 43px;
                 height: 43px;
@@ -64,7 +64,7 @@
                     }
                 }
             } /* /order-num */
-        } /* /purchase-status__header */
+        } /* /purchase-success__header */
 
         /*  WISHES-TEXT */
         .wishes-text {
@@ -132,5 +132,5 @@
                 }
             }
         } /* /feedback__links */
-    } /* purchase-status__wrapper */
-} /* /purchase-status  */
+    } /* purchase-success__wrapper */
+} /* /purchase-success  */
