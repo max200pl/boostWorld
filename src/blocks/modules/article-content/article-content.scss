@@ -1,97 +1,92 @@
 .article-content__intro {
-    @include xs-md {
-        background-image: url(../../../img/article__content/article-content__img-mobile.jpg);
-        background-position-x: right;
-    }
+	@include xs-md {
+		background-image: url(../../../img/article__content/article-content__img-mobile.jpg);
+		background-position-x: right;
+	}
 
-
-    position: relative;
-    width: 100%;
-    min-height: 330px;
-    border: 1px solid $line-light;
-    border-width: 1px 1px 0 1px;
-    border-radius: $radius $radius 0 0;
-    background-image: url(../../../img/article__content/article-content__img.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+	position: relative;
+	width: 100%;
+	min-height: 330px;
+	border: 1px solid $line-light;
+	border-width: 1px 1px 0 1px;
+	border-radius: $radius $radius 0 0;
+	background-image: url(../../../img/article__content/article-content__img.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .article-content__intro-wrapper {
-    @include xs-md {
-        margin-top: 0;
-        bottom: 21px;
-        left: 21px;
-        max-width: 176px;
-    }
+	@include xs-md {
+		margin-top: 0;
+		bottom: 21px;
+		left: 21px;
+		max-width: 176px;
+	}
 
+	position: absolute;
+	bottom: 39px;
+	left: 32px;
+	max-width: 305px;
 
-    position: absolute;
-    bottom: 39px;
-    left: 32px;
-    max-width: 305px;
+	.article-content__intro-overTitle {
+		margin-bottom: 5px;
+		font-family: "SF Pro Display", serif;
+		font-weight: 400;
+		font-size: $size-x;
+		line-height: 120%;
+		letter-spacing: -0.01em;
+		color: $dop-2;
+	}
 
-    .article-content__intro-overTitle {
-        margin-bottom: 5px;
-        font-family: "SF Pro Display", serif;
-        font-weight: 400;
-        font-size: $size-x;
-        line-height: 120%;
-        letter-spacing: -0.01em;
-        color: $dop-2;
-    }
+	.article-content__intro-title {
+		@include xs-md {
+			font-size: $size-l;
+		}
 
-    .article-content__intro-title {
-        @include xs-md {
-            font-size: $size-l;
-        }
-
-
-        font-family: "TT Interfaces", serif;
-        font-weight: 600;
-        font-size: $size-xl;
-        line-height: 86%;
-        letter-spacing: -0.035em;
-        color: $white;
-    }
+		font-family: "TT Interfaces", serif;
+		font-weight: 600;
+		font-size: $size-xl;
+		line-height: 86%;
+		letter-spacing: -0.035em;
+		color: $white;
+	}
 }
 
 .article {
-    @include xs-md {
-        margin: 0;
-        border: none;
-        border-radius: 0;
-        padding: 0 0 26px 0;
-    }
+	@include xs-md {
+		margin: 0;
+		border: none;
+		border-radius: 0;
+		padding: 0 0 26px 0;
+	}
 
+	margin-bottom: 80px;
+	border: 1px solid $line-light;
+	border-width: 0 1px 1px 1px;
+	border-radius: 0 0 $radius $radius;
+	padding: 11px 27px 30px 32px;
+	background-color: $white;
 
-    margin-bottom: 80px;
-    border: 1px solid $line-light;
-    border-width: 0 1px 1px 1px;
-    border-radius: 0 0 $radius $radius;
-    padding: 11px 27px 30px 32px;
-    background-color: $white;
+	.article__heading {
+		@include xs-md {
+			padding: 15px 0 14px;
+		}
 
-    .article__heading {
-        @include xs-md {
-            padding: 15px 0 14px;
-        }
+		padding: 20px 0 14px;
+		font-family: "TT Interfaces", serif;
+		font-weight: 600;
+		font-size: $size-sl;
+		line-height: 86%;
+		letter-spacing: -0.035em;
+		color: $dop-text;
+	}
 
-
-        padding: 20px 0 14px;
-        font-family: "TT Interfaces", serif;
-        font-weight: 600;
-        font-size: $size-sl;
-        line-height: 86%;
-        letter-spacing: -0.035em;
-        color: $dop-text;
-    }
-
-    .article__paragraph {
-        font-family: "SF Pro Display", serif;
-        font-weight: 400;
-        font-size: $size-sm;
-        line-height: 120%;
-        letter-spacing: -0.01em;
-        color: $dop-text;
-    }
+	.article__paragraph {
+		font-family: "SF Pro Display", serif;
+		font-weight: 400;
+		font-size: $size-sm;
+		line-height: 150%;
+		letter-spacing: -0.01em;
+		color: $dop-text;
+	}
 }

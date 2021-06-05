@@ -1,3 +1,3 @@
 import "%modules%/header/header";
-import "%modules%/faq-lis/faq-lis";
-import "%modules%/footer/footer"
+import "%modules%/faq-list/faq-list";
+import "%modules%/footer/footer";
