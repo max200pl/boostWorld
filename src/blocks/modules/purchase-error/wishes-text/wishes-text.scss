@@ -1,0 +1,21 @@
+/*  WISHES-TEXT */
+.wishes-text {
+    margin-bottom: 28px;
+
+    .wishes-text__title {
+        max-width: 300px;
+        margin-bottom: 16px;
+        font-family: "TT Interfaces", serif;
+        font-weight: 600;
+        font-size: $size-xl;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        color: $dop-text;
+    }
+
+    .wishes-text__subtitle {
+        @include SFRegular;
+
+        max-width: 295px;
+    }
+} /*  /wishes-text */

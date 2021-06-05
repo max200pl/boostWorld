@@ -1,0 +1,25 @@
+/* ORDER-NUM */
+.order-num {
+    display: flex;
+    vertical-align: center;
+    margin-left: 13px;
+    max-width: 190px;
+    max-height: 43px;
+    border: 1px solid $line-light;
+    border-radius: $radius;
+    padding: 13px 26px 13px 27px;
+
+    & > .order-num__text {
+        font-family: "SF Pro Display", serif;
+        font-weight: 400;
+        font-size: $size-x;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: $dop-text;
+
+        + .order-num__id-order {
+            margin-left: 3px;
+            font-weight: 600;
+        }
+    }
+} /* /order-num */

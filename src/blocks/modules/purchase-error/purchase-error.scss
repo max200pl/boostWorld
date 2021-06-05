@@ -1,0 +1,50 @@
+.purchase-status {
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    &_bg-error {
+        background: url(../../../img/status-purchase_error/purchase-error__bg.jpg);
+    }
+
+    .purchase-status__wrapper {
+        @include border;
+        @include xs-md {
+            width: 100%;
+            border: none;
+            padding: 20px 15px 22px;
+        }
+
+
+        background-color: $white;
+        padding: 31px 25px 30px 26px;
+
+        .purchase-status__header {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-bottom: 24px;
+
+            .purchase-status__img-status {
+                position: relative;
+                width: 43px;
+                height: 43px;
+                border-radius: $radius;
+
+                &_bg-color-error {
+                    background-color: $accent_3;
+                }
+
+                & object {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-right: -50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}

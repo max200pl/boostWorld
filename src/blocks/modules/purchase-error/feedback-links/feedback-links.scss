@@ -1,0 +1,47 @@
+/* FEEDBACK__LINKS */
+.feedback-links {
+    @include xs-lg {
+        flex-direction: column;
+    }
+
+
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -7px;
+
+    .feedback-links__item {
+        @include xs-lg {
+            margin-bottom: 12px;
+            max-width: 100%;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+
+        @include border;
+
+        display: flex;
+        align-items: center;
+        min-width: 180px;
+        max-width: 185px;
+        margin: 0 7px;
+        padding: 12px 15px;
+        background-color: $white;
+        cursor: pointer;
+
+        .feedback-links__text {
+            padding-left: 10px;
+            color: $dop-text;
+            font-size: $size-x;
+            font-family: "SF Pro Display", serif;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -0.01em;
+            text-decoration: underline;
+        }
+    }
+}
+
+/* /feedback__links */
