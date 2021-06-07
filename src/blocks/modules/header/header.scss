@@ -14,11 +14,40 @@
     .header__start {
         display: flex;
         align-items: center;
+    }
+}
 
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 28px;
+
+    .nav__link {
+        @include SFRegular($dop-text, $size-sm);
+
+        position: relative;
+        cursor: pointer;
+        padding: 0 12px;
+
+        &_icon {
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 0;
+                width: 4px;
+                height: 4px;
+                border-top: 1px solid $dop-text;
+                border-right: 1px solid $dop-text;
+                transform: translateY(-80%) rotate(135deg);
+                transition: 2s;
+            }
+        }
+
+        &.active::after {
+            transform: translateY(-50%) rotate(-45deg);
         }
     }
 }
