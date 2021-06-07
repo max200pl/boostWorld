@@ -1,0 +1,24 @@
+.header {
+    position: relative;
+    background-color: $bg-font-color;
+}
+
+.header__layout {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    padding-bottom: 13px;
+
+    .header__start {
+        display: flex;
+        align-items: center;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
