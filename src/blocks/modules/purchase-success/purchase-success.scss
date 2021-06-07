@@ -82,7 +82,7 @@
             }
 
             .wishes-text__subtitle {
-                @include SFRegular;
+                @include SFRegular($dop-text, $size-sm);
 
                 max-width: 295px;
             }
