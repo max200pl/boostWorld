@@ -1,17 +1,28 @@
-document.getElementById("header").onmouseover = function (event) {
-     var target = event.target; //элемент на котором произошел клик
-     
-     if (target.id !== 'header') { //target.id != 'active-header' &&
-          //closeMenu()
-     }
-     if (target.id == 'active-header') {
-          document.getElementById("navbar").style.display = "flex";
-     }
-}
+let isMobile = {
+	Android: function() {return navigator.userAgent.match(/Android/i);},
+	BlackBerry: function() {return navigator.userAgent.match(/BlackBerry/i);},
+	iOS: function() {return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+	Opera: function() {return navigator.userAgent.match(/Opera Mini/i);},
+	Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
+	any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+};
+		let body=document.querySelector('body');
+if(isMobile.any()){
+		body.classList.add('touch');
+		let arrow=document.querySelectorAll('.menu-nav__arrow');
+	for(i=0; i<arrow.length; i++){
+			let thisLink=arrow[i].previousElementSibling;
+			let subMenu=arrow[i].nextElementSibling;
+			let thisArrow=arrow[i];
 
-function closeMenu() {
-     const menu = document.getElementById("navbar");
-     menu.style.display = "none";
+			thisLink.classList.add('parent');
+		arrow[i].previousElementSibling.addEventListener('click', function(){
+			subMenu.classList.toggle('open');
+			thisArrow.classList.toggle('active');
+		});
+	}
+}else{
+	body.classList.add('mouse');
 }
 
 

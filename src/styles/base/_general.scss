@@ -2,6 +2,32 @@ body {
     background-color: $bg-font-color;
 }
 
+body.mouse .menu-nav > li:hover .sub-menu-list {
+    display: flex;
+    width: 500px;
+}
+body.touch .sub-menu-list.open {
+    display: flex;
+}
+body.mouse .sub-menu-list.open {
+    display: flex;
+}
+
+body.touch .arrow {
+    transform: translateY(-80%) rotate(45deg);
+}
+body.touch .arrow.active {
+    transform: translateY(-80%) rotate(135deg);
+}
+
+body.mouse .arrow {
+    transform: translateY(-80%) rotate(135deg);
+}
+body.mouse .arrow:hover {
+    transform: translateY(-80%) rotate(-95deg);
+}
+
+
 .container {
     max-width: 1220px;
     margin: 0 auto;
@@ -23,9 +49,9 @@ body {
 }
 
 .hide {
-    display: none !important; 
+    display: none !important;
 }
 
 .show {
-    display: flex  !important; 
+    display: flex  !important;
 }

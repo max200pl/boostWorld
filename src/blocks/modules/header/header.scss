@@ -40,7 +40,7 @@
 
 
     display: flex;
-    flex-basis: 320px;
+    flex-basis: 339px;
     align-items: center;
     justify-content: space-between;
 
@@ -121,9 +121,18 @@
 }
 
 .nav {
+    position: relative;
+}
+
+.menu-nav {
+    @include lg-xl {
+        margin-left: 10px;
+    }
+
+
     @include xs-lg {
         margin-left: 0;
-        display: none;
+        display: flex;
     }
 
 
@@ -132,104 +141,77 @@
     justify-content: space-between;
     margin-left: 16px;
 
-    .nav__link {
-        @include SFRegular($dop-text, $size-sm);
+    & .menu-nav__item {
+        @include xs-lg {
+            display: none;
+        }
 
+
+        margin-left: 0;
         position: relative;
-        cursor: pointer;
-        padding: 11px 24px 11px;
 
-        &_icon {
-            padding-right: 10px;
+        & .sub-menu-list {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 12px;
+            padding: 0;
+            background-color: $accent_1;
 
             &::after {
                 content: "";
                 display: block;
                 position: absolute;
-                top: 22px;
-                right: 0;
-                width: 4px;
-                height: 4px;
-                border-top: 1px solid $dop-text;
-                border-right: 1px solid $dop-text;
-                transform: translateY(-80%) rotate(135deg);
-                transition: 1s;
+                top: -7px;
+                left: 28px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 5px 8px 5px;
+                border-color: transparent transparent $accent_1 transparent;
             }
 
-            &:hover {
-                &.active::after {
-                    transform: translateY(-50%) rotate(-45deg);
-                }
+            & li {
+                padding: 11px 7px 11px;
+            }
+
+            .navbar__link {
+                @include SFRegular($white, $size-sm);
+
+                text-decoration: none;
             }
         }
-    }
-}
 
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: relative;
-    background-color: $accent_1;
-
-    .nav {
-        &_modal {
-            @include xs-lg {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                max-width: 200px;
-            }
-
-
-            display: none;
-        }
-    }
-
-    .navbar__submenu {
-        @include xs-lg {
-            flex-direction: column;
-            margin-left: 20px;
+        &:hover .sub-menu-list {
+            display: flex;
         }
 
+        &:hover > .menu-nav__arrow {
+            transform: translateY(-50%) rotate(-45deg);
+        }
 
-        display: flex;
-        text-decoration: none;
-        min-height: 46px;
-        margin-left: 134px;
-
-        .navbar__link {
-            @include SFRegular($white, $size-sm);
-
-            display: block;
-            position: relative;
-            text-decoration: none;
-            padding: 13px 24px 14px 0;
-
-            &:first-child {
-                &::before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    top: -8.6px;
-                    left: 22px;
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-width: 0 5px 8.7px 5px;
-                    border-color: transparent transparent $accent_1 transparent;
-                }
-            }
+        .menu-nav__arrow {
+            position: absolute;
+            top: 13px;
+            right: 0;
+            width: 4px;
+            height: 4px;
+            border-top: 1px solid $dop-text;
+            border-right: 1px solid $dop-text;
+            transition: 1s;
         }
     }
 
-    .navbar__bottom {
-        @include xs-lg {
-            display: block;
-            width: 100%;
+    & .menu-nav__link {
+        @include lg-xl {
+            padding: 11px 16px 11px;
         }
 
 
-        display: none;
+        @include SFRegular($dop-text, $size-sm);
+
+        position: relative;
+        cursor: pointer;
+        padding: 11px 24px 11px;
     }
 }
