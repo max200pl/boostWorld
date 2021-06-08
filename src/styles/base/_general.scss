@@ -1,3 +1,7 @@
+body {
+    background-color: $bg-font-color;
+}
+
 .container {
     max-width: 1220px;
     margin: 0 auto;
@@ -7,4 +11,21 @@
     &:hover {
         opacity: 0.7;
     }
+}
+
+.btn {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.hide {
+    display: none !important; 
+}
+
+.show {
+    display: flex  !important; 
 }

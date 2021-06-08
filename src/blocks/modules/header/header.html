@@ -1,47 +1,67 @@
-<header class="header">
-     <div class="container">
-          <div class="header__layout">
-               <div class="header__start">
-                    <a href="#" class="logo header__logo">
-                         <object data="./img/svg/header-logo__logo.svg" type="image/svg+xml"></object>
-                    </a>
+<header id="header" class="header">
 
-                    <nav class="nav" id="nav">
-                         <a class="nav__link nav__link_icon active active-link">Boosting</a>
-                         <a class="nav__link nav__link_icon active-link">Account Store</a>
-                         <a class="nav__link active-link">Blog</a>
-                         <a class="nav__link active-link">FAQ</a>
-                         <a class="nav__link active-link">Contacts</a>
-                    </nav>
-               </div>
-
-               <div class="header__end">
-                    <div class="currency">
-                         <span class="currency__text"></span>
-                         <select class="currency-selector">
-                              <option data-symbol="₽" selected></option>
-                              <option data-symbol="€"></option>
-                              <option data-symbol="$"></option>
-                         </select>
-                    </div>
-
-                    <button class="members-area" type="submit">
-                         <object data="./img/svg/members-area.svg" type="image/svg+xml"></object>
-                    </button>
-
-                    <button class="card" type="submit">
-                         <object data="./img/svg/card.svg" type="image/svg+xml"></object>
-                    </button>
-               </div>
-
+     <div class="header__layout container">
+          <div class="header__start">
+               <a href="#" class="logo header__logo">
+                    <object data="./img/svg/header-logo__logo.svg" type="image/svg+xml"></object>
+               </a>
+               <nav class="nav">
+                    <a id="active-header" class="nav__link nav__link_icon active active-link">Boosting</a>
+                    <a class="nav__link nav__link_icon active-link">Account Store</a>
+                    <a class="nav__link active-link">Blog</a>
+                    <a class="nav__link active-link">FAQ</a>
+                    <a class="nav__link active-link">Contacts</a>
+               </nav>
           </div>
-          <!-- /header__layout -->
-          <div class="navbar">
-               <a class="navbar__link" href="#">CS:GO Boosting</a>
-               <a class="navbar__link" href="#">Faceit Boosting</a>
-               <a class="navbar__link" href="#">ESEA Boosting</a>
-               <a class="navbar__link" href="#">Esportal Boosting</a>
+
+          <div class="header__end">
+               <div class="currency">
+                    <span class="currency__text">Currency:</span>
+                    <select class="currency-selector">
+                         <option data-symbol="₽" selected>₽</option>
+                         <option data-symbol="€">€</option>
+                         <option data-symbol="$">$</option>
+                    </select>
+               </div>
+
+               <button class="members-area btn">
+                    <object data="./img/svg/members-area__icon.svg" type="image/svg+xml"></object>
+                    <span class="members-area__user">Members Area</span>
+               </button>
+
+               <button class="card btn" type="submit">
+                    <img class="card__img" src="./img/svg/card.svg" alt="card">
+               </button>
+
+               <button class="header__menu-button btn" id="button__toggle" type="button">
+                    <img src="./img/svg/header__menu-button.svg" alt="menu button">
+               </button>
+
+          </div><!-- /header__end -->
+
+     </div><!-- /header__layout -->
+     <!-- /header__layout -->
+     <div id="navbar" class="navbar">
+          <div class="container">
+               <nav class="nav nav_modal">
+                    <a class="nav__link nav__link_icon active-header active-link">Boosting</a>
+                    <a class="nav__link nav__link_icon active-link">Account Store</a>
+                    <a class="nav__link active-link">Blog</a>
+                    <a class="nav__link active-link">FAQ</a>
+                    <a class="nav__link active-link">Contacts</a>
+               </nav>
+
+               <div id="navbarSubmenu" class="navbar__submenu">
+                    <a href="#" class="navbar__link">CS:GO Boosting</a>
+                    <a href="#" class="navbar__link">Faceit Boosting</a>
+                    <a href="#" class="navbar__link">ESEA Boosting</a>
+                    <a href="#" class="navbar__link">Esportal Boosting</a>
+               </div>
+
+               <div class="navbar__bottom">
+
+               </div>
           </div>
      </div>
-
+     <!-- /navbar -->
 </header>

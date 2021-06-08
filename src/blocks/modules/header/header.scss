@@ -1,15 +1,26 @@
 .header {
+    @include xs-lg {
+        background-color: $white;
+    }
+
+
     position: relative;
     background-color: $bg-font-color;
 }
 
 .header__layout {
+    @include xs-lg {
+        max-height: 54px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding-top: 14px;
-    padding-bottom: 13px;
+    max-height: 46px;
 
     .header__start {
         display: flex;
@@ -17,37 +28,208 @@
     }
 }
 
-nav {
+.header__end {
+    @include sm-lg {
+        flex-basis: 200px;
+    }
+
+
+    @include xs-sm {
+        flex-basis: 160px;
+    }
+
+
+    display: flex;
+    flex-basis: 320px;
+    align-items: center;
+    justify-content: space-between;
+
+    .currency {
+        display: flex;
+
+        /* margin-right: 14px; */
+
+        .currency__text {
+            @include SFRegular($dop-text, $size-sm);
+
+            padding-right: 8px;
+        }
+
+        .currency-selector {
+            @include SFRegular($dop-text, $size-sm);
+            @include border;
+
+            background-color: $line-light;
+            cursor: pointer;
+
+            & > option {
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    .card {
+        position: relative;
+        max-width: 50px;
+        max-height: 46px;
+        padding: 17px;
+        cursor: pointer;
+
+        .card__img {
+            position: absolute;
+            top: 50%;
+            margin: 0;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .header__menu-button {
+        @include xs-lg {
+            display: block;
+        }
+
+
+        display: none;
+        height: 46px;
+        cursor: pointer;
+
+        > img {
+            max-width: none;
+        }
+    }
+}
+
+.members-area {
+    @include xs-lg {
+        display: none;
+    }
+
+
+    display: flex;
+    min-width: 163px;
+    max-width: 163px;
+    background-color: $accent_1;
+    padding: 11px 14px;
+
+    .members-area__user {
+        @include SFRegular($white, $size-sm);
+
+        font-weight: 600;
+        padding-left: 8px;
+    }
+}
+
+.nav {
+    @include xs-lg {
+        margin-left: 0;
+        display: none;
+    }
+
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 28px;
+    margin-left: 16px;
 
     .nav__link {
         @include SFRegular($dop-text, $size-sm);
 
         position: relative;
         cursor: pointer;
-        padding: 0 12px;
+        padding: 11px 24px 11px;
 
         &_icon {
+            padding-right: 10px;
+
             &::after {
                 content: "";
                 display: block;
                 position: absolute;
-                top: 10px;
+                top: 22px;
                 right: 0;
                 width: 4px;
                 height: 4px;
                 border-top: 1px solid $dop-text;
                 border-right: 1px solid $dop-text;
                 transform: translateY(-80%) rotate(135deg);
-                transition: 2s;
+                transition: 1s;
+            }
+
+            &:hover {
+                &.active::after {
+                    transform: translateY(-50%) rotate(-45deg);
+                }
             }
         }
+    }
+}
 
-        &.active::after {
-            transform: translateY(-50%) rotate(-45deg);
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    background-color: $accent_1;
+
+    .nav {
+        &_modal {
+            @include xs-lg {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                max-width: 200px;
+            }
+
+
+            display: none;
         }
+    }
+
+    .navbar__submenu {
+        @include xs-lg {
+            flex-direction: column;
+            margin-left: 20px;
+        }
+
+
+        display: flex;
+        text-decoration: none;
+        min-height: 46px;
+        margin-left: 134px;
+
+        .navbar__link {
+            @include SFRegular($white, $size-sm);
+
+            display: block;
+            position: relative;
+            text-decoration: none;
+            padding: 13px 24px 14px 0;
+
+            &:first-child {
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: -8.6px;
+                    left: 22px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 5px 8.7px 5px;
+                    border-color: transparent transparent $accent_1 transparent;
+                }
+            }
+        }
+    }
+
+    .navbar__bottom {
+        @include xs-lg {
+            display: block;
+            width: 100%;
+        }
+
+
+        display: none;
     }
 }
