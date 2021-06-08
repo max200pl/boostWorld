@@ -5,7 +5,56 @@
 
 
     position: relative;
+    width: 100%;
     background-color: $bg-font-color;
+
+    &:hover .sub-menu {
+        display: flex;
+    }
+
+    .sub-menu {
+        display: none;
+        justify-content: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        background-color: $accent_1;
+
+        .sub-menu__wrapper {
+            display: flex;
+            padding-left: 132px;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: -7px;
+                left: 200px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 5px 8px 5px;
+                border-color: transparent transparent $accent_1 transparent;
+            }
+        }
+
+
+        .sub-menu__link {
+            @include lg-xl {
+                padding: 11px 16px 11px;
+            }
+
+
+            @include SFRegular($white, $size-sm);
+
+            display: flex;
+            cursor: pointer;
+            padding: 11px 7px 11px;
+            text-decoration: none;
+        }
+    }
 }
 
 .header__layout {
@@ -150,44 +199,8 @@
         margin-left: 0;
         position: relative;
 
-        & .sub-menu-list {
-            display: none;
-            position: absolute;
-            top: 30px;
-            left: 12px;
-            padding: 0;
-            background-color: $accent_1;
-
-            &::after {
-                content: "";
-                display: block;
-                position: absolute;
-                top: -7px;
-                left: 28px;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 0 5px 8px 5px;
-                border-color: transparent transparent $accent_1 transparent;
-            }
-
-            & li {
-                padding: 11px 7px 11px;
-            }
-
-            .navbar__link {
-                @include SFRegular($white, $size-sm);
-
-                text-decoration: none;
-            }
-        }
-
-        &:hover .sub-menu-list {
-            display: flex;
-        }
-
         &:hover > .menu-nav__arrow {
-            transform: translateY(-50%) rotate(-45deg);
+            transform: translateY(-80%) rotate(-45deg);
         }
 
         .menu-nav__arrow {

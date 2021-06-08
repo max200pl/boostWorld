@@ -2,14 +2,10 @@ body {
     background-color: $bg-font-color;
 }
 
-body.mouse .menu-nav > li:hover .sub-menu-list {
-    display: flex;
-    width: 500px;
-}
-body.touch .sub-menu-list.open {
+body.touch .sub-menu.open {
     display: flex;
 }
-body.mouse .sub-menu-list.open {
+body.mouse .sub-menu.open {
     display: flex;
 }
 
