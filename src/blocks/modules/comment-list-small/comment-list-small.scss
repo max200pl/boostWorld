@@ -7,15 +7,31 @@
         margin-right: auto;
 
         &__wrapper {
-            position: relative;
+            @include xs-md {
+                display: flex;
+                flex-direction: column;
+            }
 
+
+            position: relative;
             overflow: hidden;
-            background-color: #eee;
+        }
+
+        &__bottom {
+            @include xs-md {
+                display: flex;
+                justify-content: center;
+                margin-top: 14px;
+            }
+            @include md-xl {
+                display: flex;
+                justify-content: center;
+                margin-top: 14px;
+            }
         }
 
         &__items {
             display: flex;
-            transition: transform 0.5s ease;
         }
 
         &__item {
@@ -34,12 +50,44 @@
             }
 
 
+            background-color: $white;
             flex: 0 0 33.3%;
             position: relative;
             max-width: 100%;
+
+            &.active {
+                @include keyframes(fade) {
+                    0% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+
+                animation: fade 0.7s;
+            }
         }
 
         &__control {
+            @include xs-md {
+                position: relative;
+                margin: 2px;
+                transform: none;
+            }
+
+
+            @include md-xl {
+                position: relative;
+                margin: 2px;
+                transform: none;
+            }
+
+
+            @include border;
+
             display: flex;
             align-items: center;
             justify-content: center;
@@ -56,16 +104,14 @@
 
         &__control_prev {
             @include xl {
-                left: -45px;
+                left: -50px;
             }
-            left: 0;
         }
 
         &__control_next {
             @include xl {
-                right: -45px;
+                right: -50px;
             }
-            right: 0;
         }
     }
 }

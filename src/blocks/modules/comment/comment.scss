@@ -1,5 +1,12 @@
 .comment {
+    @include xs-md {
+        padding: 19px 16px;
+    }
+
+
     @include border;
+
+    border-radius: 0 0 0 0;
     padding: 19px 21px;
 
     &_pad {
@@ -40,10 +47,7 @@
 
     &__trustpilot {
         @include border;
-        @include xs-md {
-            display: none;
-        }
-        @include lg-xl {
+        @include xs-lg {
             display: none;
         }
 
