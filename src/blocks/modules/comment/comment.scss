@@ -1,0 +1,89 @@
+.comment {
+    @include xs-md {
+        padding: 19px 16px;
+    }
+
+
+    @include border;
+
+    border-radius: 0 0 0 0;
+    padding: 19px 21px;
+
+    &_pad {
+        margin-left: 6px;
+    }
+
+    &__paragraph {
+        font-family: "SF Pro Display", serif;
+        font-weight: 400;
+        font-size: $size-sm;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: $dop-text;
+    }
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    max-height: 27px;
+
+    &__name-user {
+        font-family: "TT Interfaces", serif;
+        font-weight: 600;
+        font-size: $size-sl;
+        line-height: 86%;
+
+        /* identical to box height, or 21px */
+
+        letter-spacing: -0.035em;
+
+        /* Background & Font */
+
+        color: $dop-text;
+    }
+
+    &__trustpilot {
+        @include border;
+        @include xs-lg {
+            display: none;
+        }
+
+
+        & img {
+            margin: 0 auto;
+        }
+
+        width: 84px;
+        height: 26px;
+        cursor: pointer;
+        background-color: $line-light;
+    }
+
+    &__end {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .stars-preview {
+            display: flex;
+            align-items: center;
+            margin-left: 12px;
+
+            & .fa {
+                width: 17px;
+                height: 17px;
+                margin: 1px;
+                background-color: #00b67a;
+
+                &-star {
+                    background-image: url(../img/svg/comment-preview/comment-preview__stars.svg);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}

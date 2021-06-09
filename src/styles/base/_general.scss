@@ -1,11 +1,20 @@
 .container {
     max-width: 1220px;
     margin: 0 auto;
+
+    &_non-p-m {
+        padding: 0;
+    }
 }
 
 .active-link {
-    transition: opacity .7s ;
+    transition: opacity 0.7s;
+
     &:hover {
-        opacity: 0.7;
+        opacity: 1;
     }
+}
+
+.transformAnim {
+    transition: .2s  all ease-in-out;
 }

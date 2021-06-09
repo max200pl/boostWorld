@@ -1,5 +1,3 @@
-
-
 @mixin SFRegular {
     font-family: SF Pro Display;
     font-style: normal;
@@ -8,10 +6,6 @@
     line-height: 120%;
     letter-spacing: -0.01em;
     color: $dop-text;
-}
-@mixin border {
-     border: 1px solid $line-light;
-     border-radius: $radius;
 }
 
 @mixin TTInterfaces($color, $size) {
@@ -22,4 +16,23 @@
     line-height: 120%;
     letter-spacing: -0.01em;
     color: $color;
+}
+
+@mixin border {
+    border: 1px solid $line-light;
+    border-radius: $radius;
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+} 
+
+@mixin animation($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: $fillmode;
+    animation-direction: $direction;
 }
