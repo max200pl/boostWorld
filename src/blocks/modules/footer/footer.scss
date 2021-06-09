@@ -1,0 +1,107 @@
+/* FOOTER */
+.footer-top {
+    @include xs-md {
+        border-width: 0 0 0 0;
+    }
+
+
+    @include border;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+    height: 45px;
+
+    .social-link {
+        display: flex;
+    }
+
+    .social-link__item {
+        margin-left: 18px;
+    }
+}
+
+.footer-main {
+    @include xs-lg {
+        flex-wrap: wrap;
+    }
+
+
+    @include xs-md {
+        border-width: 0 0 0 0;
+    }
+
+
+    @include border;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0 9px;
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+
+    .footer-main__item {
+        @include xs-lg {
+            flex-basis: 50%;
+            padding-bottom: 16px;
+        }
+
+
+        padding: 0;
+
+        .footer-main__text {
+            &_title {
+                @include TTInterfaces($dop-text, $size-m);
+
+                line-height: 1;
+                padding-bottom: 9px;
+            }
+
+            padding-bottom: 4px;
+            font-family: "SF Pro Display", serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: $size-x;
+            line-height: 120%;
+            letter-spacing: -0.01em;
+            color: $dop-text;
+
+            .footer-main__link {
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                color: $dop-text;
+
+                .active {
+                    text-decoration: underline;
+                }
+
+                & > span {
+                    padding-left: 6px;
+                }
+
+                &_decor-none {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+/*  /footer-main*/
+
+.footer-bottom {
+    padding: 12px 0 8px;
+
+    .footer-bottom__copyright {
+        font-family: "SF Pro Display", serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: #848593;
+    }
+}

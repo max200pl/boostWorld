@@ -13,3 +13,13 @@
      border: 1px solid $line-light;
      border-radius: $radius;
 }
+
+@mixin TTInterfaces($color, $size) {
+    font-family: TT Interfaces, serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: $size;
+    line-height: 120%;
+    letter-spacing: -0.01em;
+    color: $color;
+}
