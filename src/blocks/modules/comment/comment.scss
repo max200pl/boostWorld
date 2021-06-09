@@ -1,7 +1,5 @@
 .comment {
     @include border;
-
-    max-width: 409px;
     padding: 19px 21px;
 
     &_pad {
@@ -45,6 +43,9 @@
         @include xs-md {
             display: none;
         }
+        @include lg-xl {
+            display: none;
+        }
 
 
         & img {
@@ -59,6 +60,7 @@
 
     &__end {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
 
         .stars-preview {
