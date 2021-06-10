@@ -11,6 +11,15 @@ window.addEventListener('load', () =>
 
   let widthItem = item[0].clientWidth;
 
+  let checkClass = slider.classList.contains("slider__items_full-page");
+  let offsetItem = 0
+  let arrItemSlider = []
+
+  if (checkClass) {
+    let offsetItem = -widthItem * 2
+    console.log(offsetItem);
+  }
+
   /**
    * Подстройка области просмотра при изменении ширины экрана 
   */

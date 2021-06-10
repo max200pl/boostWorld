@@ -10,11 +10,26 @@
             @include xs-md {
                 display: flex;
                 flex-direction: column;
+
+                &_none-overflow {
+                    overflow: hidden;
+                }
+            }
+
+
+            @include md-lg {
+                &_none-overflow {
+                    overflow: hidden;
+                }
             }
 
 
             position: relative;
             overflow: hidden;
+
+            &_none-overflow {
+                overflow: inherit;
+            }
         }
 
         &__bottom {
@@ -33,6 +48,18 @@
         }
 
         &__items {
+            &_full-page {
+                & > .slider__item {
+                    @include xs-lg {
+                        transform: none;
+                    }
+
+
+                    padding: 0 12px;
+                    transform: translateX(-399px);
+                }
+            }
+
             display: flex;
         }
 
@@ -101,18 +128,32 @@
             color: #fff;
             background: rgba(0, 0, 0, 0.3);
             opacity: 0.5;
+            cursor: pointer;
             user-select: none;
+
+            &_translateY-382 {
+                transform: translateY(-382%);
+            }
         }
 
         &__control_prev {
             @include xl {
                 left: -50px;
+
+                &_right-50 {
+                    right: 50px;
+                    left: auto;
+                }
             }
         }
 
         &__control_next {
             @include xl {
                 right: -50px;
+
+                &_right-0 {
+                    right: 0;
+                }
             }
         }
     }
