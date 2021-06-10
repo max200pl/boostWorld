@@ -1,4 +1,5 @@
-window.addEventListener('load', () => {
+window.addEventListener('load', () =>
+{
   const button__prev = document.querySelector('.slider__control_prev');
   const button__next = document.querySelector('.slider__control_next');
 
@@ -13,7 +14,8 @@ window.addEventListener('load', () => {
   /**
    * Подстройка области просмотра при изменении ширины экрана 
   */
-  window.addEventListener('resize', () => {
+  window.addEventListener('resize', () =>
+  {
     if (item[0].clientWidth !== widthItem) widthItem = item[0].clientWidth;
     slider.style.transform = 'translateX(' + `${-widthItem * counter}px)`;
   });
@@ -21,9 +23,10 @@ window.addEventListener('load', () => {
   /**
    * Добавление класса active к появляющемуся item 
   */
-  function addedActive(index) {
+  function addedActive(index)
+  {
     console.log(index);
-   
+
     for (var i = 0; i < maxItem; i++) {
       item[i].classList.remove("active");
     }
@@ -32,14 +35,16 @@ window.addEventListener('load', () => {
   }
 
 
-  button__next.addEventListener("click", () => {
+  button__next.addEventListener("click", () =>
+  {
     counter >= item.length - 1 ? (counter = - 1) : null;
     slider.classList.add("transformAnim");
     counter++
     slider.style.transform = 'translateX(' + `${-widthItem * counter}px`;
     addedActive(counter);
   });
-  button__prev.addEventListener("click", () => {
+  button__prev.addEventListener("click", () =>
+  {
     slider.classList.add("transformAnim");
     if (counter <= 0) counter = item.length
     counter--
