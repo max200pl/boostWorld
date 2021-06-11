@@ -118,7 +118,7 @@
     }
 
     &__subText {
-        @include SFRegular;
+        @include SFRegular($dop-2, $size-sm);
 
         color: #b2b7e2;
     }
