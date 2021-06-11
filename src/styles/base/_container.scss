@@ -9,27 +9,33 @@
         padding: 0 20px;
     }
 
+
     @include lg {
         max-width: 990px;
         padding: 0 20px;
     }
+
 
     @include md {
         max-width: 719px;
         padding: 0 20px;
     }
 
+
     @include sm-md {
-        &_non-p-m{
+        &_non-p-m {
             padding: 0;
         }
+
         padding: 0 15px;
     }
 
+
     @include xs-sm {
-        &_non-p-m{
+        &_non-p-m {
             padding: 0;
         }
+
         max-width: 320px;
         padding: 0 15px;
     }
