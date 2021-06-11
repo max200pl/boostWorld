@@ -28,7 +28,7 @@
     @keyframes #{$name} {
         @content;
     }
-} 
+}
 
 @mixin animation($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
     animation-delay: $delay;
