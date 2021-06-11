@@ -1,0 +1,56 @@
+.advantages {
+    @include xs-md {
+        border-radius: 0 0 40px 40px;
+    }
+
+
+    background-color: $dop-text;
+    border-radius: 0 0 100px 100px;
+
+    &__wrapper {
+        @include xs-md {
+            padding: 12px 0 36px;
+        }
+
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 12px 0 40px;
+    }
+
+    &__item {
+        @include lg-xl {
+            max-width: 214px;
+        }
+
+
+        @include md-lg {
+            flex-basis: 50%;
+        }
+
+
+        @include xs-md {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+
+
+        max-width: 283px;
+    }
+
+    &__title {
+        /* TT Interfaces/28px */
+        @include TTInterfaces($white, $size-l);
+
+        padding: 14px 0;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+    }
+
+    &__subtitle {
+        @include SFRegular;
+
+        color: $dop-2;
+    }
+}
