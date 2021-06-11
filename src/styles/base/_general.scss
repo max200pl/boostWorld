@@ -27,21 +27,18 @@ body.mouse .arrow:hover {
 .container {
     max-width: 1220px;
     margin: 0 auto;
-}
 
-.active-link {
-    &:hover {
-        opacity: 0.7;
+    &_non-p-m {
+        padding: 0;
     }
 }
 
-.btn {
-    padding: 0;
-    border: none;
-    font: inherit;
-    color: inherit;
-    background-color: transparent;
-    cursor: pointer;
+.active-link {
+    transition: opacity 0.7s;
+
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .hide {
@@ -50,4 +47,7 @@ body.mouse .arrow:hover {
 
 .show {
     display: flex  !important;
+  
+.transformAnim {
+    transition: .2s  all ease-in-out;
 }
