@@ -1,0 +1,240 @@
+.header {
+    @include xs-lg {
+        background-color: $white;
+    }
+
+
+    position: relative;
+    width: 100%;
+    background-color: $bg-font-color;
+
+    .sub-menu {
+        display: none;
+        justify-content: center;
+        position: absolute;
+        z-index: 2;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        background-color: $accent_1;
+
+        .sub-menu__wrapper {
+            display: flex;
+            padding-left: 132px;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: -7px;
+                left: 200px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 5px 8px 5px;
+                border-color: transparent transparent $accent_1 transparent;
+            }
+        }
+
+        .sub-menu__link {
+            @include lg-xl {
+                padding: 11px 16px 11px;
+            }
+
+
+            @include SFRegular($white, $size-sm);
+
+            display: flex;
+            cursor: pointer;
+            padding: 11px 7px 11px;
+            text-decoration: none;
+        }
+    }
+}
+
+.header__layout {
+    @include xs-lg {
+        max-height: 54px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 46px;
+
+    .header__start {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header__end {
+    @include sm-lg {
+        flex-basis: 200px;
+    }
+
+
+    @include xs-sm {
+        flex-basis: 160px;
+    }
+
+
+    display: flex;
+    flex-basis: 339px;
+    align-items: center;
+    justify-content: space-between;
+
+    .currency {
+        display: flex;
+
+        /* margin-right: 14px; */
+
+        .currency__text {
+            @include SFRegular($dop-text, $size-sm);
+
+            padding-right: 8px;
+        }
+
+        .currency-selector {
+            @include SFRegular($dop-text, $size-sm);
+            @include border;
+
+            background-color: $line-light;
+            cursor: pointer;
+
+            & > option {
+                border: none;
+                outline: none;
+            }
+        }
+    }
+
+    .card {
+        position: relative;
+        max-width: 50px;
+        max-height: 46px;
+        border: none;
+        padding: 17px;
+        cursor: pointer;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+
+        .card__img {
+            position: absolute;
+            top: 50%;
+            margin: 0;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .header__menu-button {
+        @include xs-lg {
+            display: block;
+            border: none;
+            font: inherit;
+            color: inherit;
+            background-color: transparent;
+
+            /* отображаем курсор в виде руки при наведении; некоторые
+            считают, что необходимо оставлять стрелочный вид для кнопок */
+            cursor: pointer;
+        }
+
+
+        display: none;
+        height: 46px;
+        cursor: pointer;
+
+        > img {
+            max-width: none;
+        }
+    }
+}
+
+.members-area {
+    @include xs-lg {
+        display: none;
+    }
+
+
+    display: flex;
+    min-width: 163px;
+    max-width: 163px;
+    background-color: $accent_1;
+    border: 1px transparent;
+    padding: 11px 14px;
+    cursor: pointer;
+
+    .members-area__user {
+        @include SFRegular($white, $size-sm);
+
+        font-weight: 600;
+        padding-left: 8px;
+    }
+}
+
+.nav {
+    position: relative;
+}
+
+.menu-nav {
+    @include lg-xl {
+        margin-left: 10px;
+    }
+
+
+    @include xs-lg {
+        margin-left: 0;
+        display: flex;
+    }
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 16px;
+
+    & .menu-nav__item {
+        @include xs-lg {
+            display: none;
+        }
+
+
+        margin-left: 0;
+        position: relative;
+
+        &:hover > .menu-nav__arrow {
+            transform: translateY(-80%) rotate(-45deg);
+        }
+
+        .menu-nav__arrow {
+            position: absolute;
+            top: 13px;
+            right: 0;
+            width: 4px;
+            height: 4px;
+            border-top: 1px solid $dop-text;
+            border-right: 1px solid $dop-text;
+            transition: 1s;
+        }
+    }
+
+    & .menu-nav__link {
+        @include lg-xl {
+            padding: 11px 16px 11px;
+        }
+
+
+        @include SFRegular($dop-text, $size-sm);
+
+        position: relative;
+        cursor: pointer;
+        padding: 11px 24px 11px;
+    }
+}

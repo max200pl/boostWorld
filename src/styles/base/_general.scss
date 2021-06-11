@@ -1,3 +1,31 @@
+body {
+    background-color: $bg-font-color;
+}
+
+body.touch .sub-menu.open {
+    display: flex;
+}
+
+body.mouse .sub-menu.open {
+    display: flex;
+}
+
+body.touch .arrow {
+    transform: translateY(-80%) rotate(45deg);
+}
+
+body.touch .arrow.active {
+    transform: translateY(-80%) rotate(135deg);
+}
+
+body.mouse .arrow {
+    transform: translateY(-80%) rotate(135deg);
+}
+
+body.mouse .arrow:hover {
+    transform: translateY(-80%) rotate(-95deg);
+}
+
 .container {
     max-width: 1220px;
     margin: 0 auto;
@@ -13,6 +41,14 @@
     &:hover {
         opacity: 1;
     }
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: flex  !important;
 }
 
 .transformAnim {
