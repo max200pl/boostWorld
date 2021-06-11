@@ -5,6 +5,7 @@ body {
 body.touch .sub-menu.open {
     display: flex;
 }
+
 body.mouse .sub-menu.open {
     display: flex;
 }
@@ -12,6 +13,7 @@ body.mouse .sub-menu.open {
 body.touch .arrow {
     transform: translateY(-80%) rotate(45deg);
 }
+
 body.touch .arrow.active {
     transform: translateY(-80%) rotate(135deg);
 }
@@ -19,10 +21,10 @@ body.touch .arrow.active {
 body.mouse .arrow {
     transform: translateY(-80%) rotate(135deg);
 }
+
 body.mouse .arrow:hover {
     transform: translateY(-80%) rotate(-95deg);
 }
-
 
 .container {
     max-width: 1220px;
@@ -47,7 +49,8 @@ body.mouse .arrow:hover {
 
 .show {
     display: flex  !important;
-  
+}
+
 .transformAnim {
     transition: .2s  all ease-in-out;
 }

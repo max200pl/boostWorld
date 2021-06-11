@@ -8,14 +8,11 @@
     width: 100%;
     background-color: $bg-font-color;
 
-    &:hover .sub-menu {
-        display: flex;
-    }
-
     .sub-menu {
         display: none;
         justify-content: center;
         position: absolute;
+        z-index: 2;
         top: 100%;
         left: 0;
         width: 100%;
@@ -39,7 +36,6 @@
                 border-color: transparent transparent $accent_1 transparent;
             }
         }
-
 
         .sub-menu__link {
             @include lg-xl {
@@ -122,8 +118,12 @@
         position: relative;
         max-width: 50px;
         max-height: 46px;
+        border: none;
         padding: 17px;
         cursor: pointer;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
 
         .card__img {
             position: absolute;
@@ -159,7 +159,9 @@
     min-width: 163px;
     max-width: 163px;
     background-color: $accent_1;
+    border: 1px transparent;
     padding: 11px 14px;
+    cursor: pointer;
 
     .members-area__user {
         @include SFRegular($white, $size-sm);
