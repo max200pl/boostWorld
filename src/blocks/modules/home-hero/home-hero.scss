@@ -1,6 +1,6 @@
 .home-hero {
     @include xs-lg {
-        border-radius: 0 0 0 0;
+        border-radius: 0 0 40px 40px;
     }
 
 
@@ -9,9 +9,13 @@
 }
 
 .home-hero__wrapper {
-    @include xs-lg {
+    @include xs-md {
         background-image: none;
-        border-radius: 0 0 0 0;
+    }
+
+
+    @include md-lg {
+        background-size: 48%;
     }
 
 
@@ -22,40 +26,4 @@
     background-repeat: no-repeat;
     background-position: bottom right;
     background-image: url(../img/svg/home-hero/home-hero__tiitle.svg);
-
-    .title-text {
-        &__intro-title {
-            @include xs-md {
-                max-width: 300px;
-            }
-
-
-            @include md-lg {
-                max-width: 400px;
-            }
-
-
-            /* TT Interfaces/48px */
-            @include TTInterfaces($white, $size-xxl);
-
-            max-width: 550px;
-            letter-spacing: -0.035em;
-            margin-bottom: 10px;
-        }
-
-        &__title_green {
-            color: $accent_2;
-        }
-
-        &__title_blue {
-            color: $accent_1;
-        }
-
-        &__intro-subTitle {
-            @include SFRegular($dop-2, $size-sm);
-
-            max-width: 400px;
-            color: $white;
-        }
-    }
 }

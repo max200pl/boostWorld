@@ -1,0 +1,41 @@
+.title-text {
+    &__title_green {
+        color: $accent_2;
+    }
+
+    &__title_blue {
+        color: $accent_1;
+    }
+
+    &__intro-subTitle {
+        @include xs-lg {
+            max-width: 345px;
+        }
+
+
+        @include SFRegular($dop-2, $size-sm);
+
+        max-width: 400px;
+        color: $white;
+    }
+
+    &__intro-title {
+        @include xs-md {
+            max-width: 300px;
+        }
+
+
+        @include md-xl {
+            max-width: 400px;
+        }
+
+
+        /* TT Interfaces/48px */
+        @include TTInterfaces($white, $size-xxl);
+
+        line-height: 86%;
+        max-width: 550px;
+        letter-spacing: -0.035em;
+        margin-bottom: 16px;
+    }
+}
