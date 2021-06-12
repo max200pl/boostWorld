@@ -50,7 +50,5 @@
 
     &__subtitle {
         @include SFRegular($dop-2, $size-sm);
-
-        color: $dop-2;
     }
 }

@@ -1,0 +1,16 @@
+.personal-cabinet-info {
+    @include xs-md {
+        border-radius: 0 0 40px 40px;
+    }
+
+
+    background-color: $dop-text;
+    border-radius: 100px 100px 0 0;
+}
+
+.personal-cabinet-info__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 330px;
+}
