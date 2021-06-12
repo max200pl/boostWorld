@@ -49,8 +49,6 @@
     }
 
     &__subtitle {
-        @include SFRegular;
-
-        color: $dop-2;
+        @include SFRegular($dop-2, $size-sm);
     }
 }
