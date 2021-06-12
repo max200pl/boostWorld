@@ -45,23 +45,6 @@
         color: $dop-text;
     }
 
-    &__trustpilot {
-        @include border;
-        @include xs-lg {
-            display: none;
-        }
-
-
-        & img {
-            margin: 0 auto;
-        }
-
-        width: 84px;
-        height: 26px;
-        cursor: pointer;
-        background-color: $line-light;
-    }
-
     &__end {
         display: flex;
         flex-wrap: wrap;
@@ -86,4 +69,52 @@
             }
         }
     }
+}
+
+.trustpilot__button {
+    @include border;
+
+    @include md-lg {
+        &_non-hide {
+            display: block;
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+        }
+
+        display: none;
+    }
+
+
+    @include xs-md {
+        &_non-hide {
+            display: block;
+            position: absolute;
+            right: 35px;
+            bottom: -2px;
+        }
+
+        display: none;
+        right: 35px;
+        bottom: -4px;
+        max-width: 70px;
+        max-height: 23px;
+    }
+
+
+    & img {
+        margin: 0 auto;
+    }
+
+    &_non-hide {
+        display: block;
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+    }
+
+    width: 84px;
+    height: 26px;
+    cursor: pointer;
+    background-color: $line-light;
 }
