@@ -1,11 +1,12 @@
-@mixin SFRegular {
+
+@mixin SFRegular($color, $size) {
     font-family: SF Pro Display;
     font-style: normal;
     font-weight: normal;
-    font-size: $size-sm;
+    font-size:  $size;
     line-height: 120%;
     letter-spacing: -0.01em;
-    color: $dop-text;
+    color: $color;
 }
 
 @mixin TTInterfaces($color, $size) {
@@ -27,7 +28,7 @@
     @keyframes #{$name} {
         @content;
     }
-} 
+}
 
 @mixin animation($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
     animation-delay: $delay;

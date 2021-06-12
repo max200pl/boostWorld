@@ -1,0 +1,126 @@
+.features {
+    @include xs-md {
+        border-radius: 0 0 40px 40px;
+    }
+
+
+    background: url(../img/svg/features/features_bg.svg);
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #0f1231;
+    border-radius: 0 0 100px 100px;
+
+    &__title-wrapper {
+        @include xs-md {
+            padding: 29px 0 50px;
+        }
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        padding: 77px 0 77px;
+    }
+
+    &__title {
+        @include xs-md {
+            font-size: 36px;
+        }
+
+
+        @include TTInterfaces($white, $size-xxl);
+
+        position: relative;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+    }
+
+    &__img-title {
+        position: absolute;
+        right: -72px;
+        bottom: 0;
+    }
+
+    &__wrapper {
+        @include xs-md {
+            flex-wrap: wrap;
+        }
+
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__col {
+        @include xs-md {
+            margin: 0 auto;
+        }
+    }
+
+    &__item {
+        @include xs-lg {
+            max-width: 400px;
+            margin: 0 0  24px 28px;
+            padding: 40px 0 19px 23px;
+        }
+
+
+        position: relative;
+        margin: 0 28px 49px;
+        padding: 40px 26px 19px 23px;
+        border-radius: $radius;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 255, 178, 1) 0%, rgba(21, 25, 63, 0) 73%);
+        }
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(0, 255, 178, 1) 0%, rgba(21, 25, 63, 0) 73%);
+        }
+    }
+
+    &__item-img {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    &__item-title {
+        @include xs-md {
+            font-size: 36px;
+        }
+
+
+        @include TTInterfaces($white, $size-sl);
+
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        margin-bottom: 14px;
+    }
+
+    &__subText {
+        @include SFRegular($dop-2, $size-sm);
+
+        color: #b2b7e2;
+    }
+}
