@@ -52,7 +52,7 @@
         }
 
         &__intro-subTitle {
-            @include SFRegular;
+            @include SFRegular($dop-2, $size-sm);
 
             max-width: 400px;
             color: $white;
