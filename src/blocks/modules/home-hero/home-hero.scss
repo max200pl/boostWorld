@@ -9,8 +9,13 @@
 }
 
 .home-hero__wrapper {
-    @include xs-lg {
+    @include xs-md {
         background-image: none;
+    }
+
+
+    @include md-lg {
+        background-size: 48%;
     }
 
 

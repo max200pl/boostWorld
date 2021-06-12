@@ -8,6 +8,11 @@
     }
 
     &__intro-subTitle {
+        @include xs-lg {
+            max-width: 345px;
+        }
+
+
         @include SFRegular($dop-2, $size-sm);
 
         max-width: 400px;
@@ -20,7 +25,7 @@
         }
 
 
-        @include md-lg {
+        @include md-xl {
             max-width: 400px;
         }
 
