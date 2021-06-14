@@ -3,6 +3,18 @@
     padding-top: 80px;
     padding-bottom: 82px;
 
+    @include md-lg {
+        padding-top: 40px;
+        padding-bottom: 42px;
+    }
+
+
+    @include xs-md {
+        padding-top: 21px;
+        padding-bottom: 38px;
+    }
+
+
     &__title {
         @include TTInterfaces($white, $size-xxl);
 
@@ -22,15 +34,9 @@
         margin: 0 -12px;
     }
 
-    &__item-img {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-    }
-
-    &__item {
+    &__col {
         @include md-lg {
-            flex-basis: 46%;
+            flex-basis: 33.333%;
             margin-top: 17px;
         }
 
@@ -42,13 +48,24 @@
 
 
         display: flex;
-        flex-basis: 25%;
+        padding: 0 12px;
+        flex-basis: 33.333%;
+        min-height: 201px;
+    }
+
+    &__item-img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__item {
+        display: flex;
+        flex-basis: 100%;
         flex-direction: column;
         justify-content: start;
         position: relative;
-        min-height: 201px;
         text-align: center;
-        margin: 0 12px;
         padding-top: 26px;
         border: 1px solid #292e64;
         border-radius: $radius;
