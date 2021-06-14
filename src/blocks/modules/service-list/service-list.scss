@@ -1,4 +1,17 @@
 .service-list {
+    background-color: #0f1231;
+    padding-top: 80px;
+    padding-bottom: 82px;
+
+    &__title {
+        @include TTInterfaces($white, $size-xxl);
+
+        line-height: 86%;
+        text-align: center;
+        letter-spacing: -0.035em;
+        margin-bottom: 30px;
+    }
+
     &__wrapper {
         @include xs-lg {
             flex-wrap: wrap;
