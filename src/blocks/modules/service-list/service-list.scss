@@ -1,8 +1,4 @@
 .service-list {
-    background-color: #0f1231;
-    padding-top: 80px;
-    padding-bottom: 82px;
-
     @include md-lg {
         padding-top: 40px;
         padding-bottom: 42px;
@@ -15,8 +11,16 @@
     }
 
 
-    &__title {
+    background-color: #0f1231;
+    padding-top: 80px;
+    padding-bottom: 82px;
+
+    &__header-title {
         @include TTInterfaces($white, $size-xxl);
+        @include xs-lg {
+            margin-bottom: 18px;
+        }
+
 
         line-height: 86%;
         text-align: center;
@@ -48,9 +52,9 @@
 
 
         display: flex;
-        padding: 0 12px;
         flex-basis: 33.333%;
         min-height: 201px;
+        padding: 0 12px;
     }
 
     &__item-img {
