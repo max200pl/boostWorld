@@ -1,0 +1,135 @@
+.service-list {
+    @include md-lg {
+        padding-top: 40px;
+        padding-bottom: 42px;
+    }
+
+
+    @include xs-md {
+        padding-top: 21px;
+        padding-bottom: 38px;
+    }
+
+
+    background-color: #0f1231;
+    padding-top: 80px;
+    padding-bottom: 82px;
+
+    &__header-title {
+        @include TTInterfaces($white, $size-xxl);
+        @include xs-lg {
+            margin-bottom: 18px;
+        }
+
+
+        line-height: 86%;
+        text-align: center;
+        letter-spacing: -0.035em;
+        margin-bottom: 30px;
+    }
+
+    &__wrapper {
+        @include xs-lg {
+            flex-wrap: wrap;
+        }
+
+
+        display: flex;
+        margin: 0 -12px;
+    }
+
+    &__col {
+        @include md-lg {
+            flex-basis: 33.333%;
+            margin-top: 17px;
+        }
+
+
+        @include xs-md {
+            flex-basis: 100%;
+            margin-top: 17px;
+        }
+
+
+        display: flex;
+        flex-basis: 33.333%;
+        min-height: 201px;
+        padding: 0 12px;
+    }
+
+    &__item-img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    &__item {
+        display: flex;
+        flex-basis: 100%;
+        flex-direction: column;
+        justify-content: start;
+        position: relative;
+        text-align: center;
+        padding-top: 26px;
+        border: 1px solid #292e64;
+        border-radius: $radius;
+
+        &_rad-grad-purpure {
+            background: radial-gradient(281.2% 298.16% at 50.16% 337.7%, #b620fd 0%, #0f1231 100%);
+        }
+
+        &_rad-grad-orange {
+            background: radial-gradient(281.2% 298.16% at 50.16% 337.7%, #fd6b20 0%, #0f1231 100%);
+        }
+
+        &_rad-grad-green {
+            background: radial-gradient(281.2% 298.16% at 50.16% 337.7%, #00993f 0%, #0f1231 100%);
+        }
+
+        &_rad-grad-blue {
+            background: radial-gradient(281.2% 298.16% at 50.16% 337.7%, #1e99e7 0%, #0f1231 100%);
+        }
+    }
+
+    &__item-title {
+        /* TT Interfaces/24px */
+
+        @include TTInterfaces($white, $size-sl);
+
+        padding-bottom: 8px;
+        line-height: 86%;
+        text-align: center;
+        letter-spacing: -0.035em;
+    }
+
+    &__item-subtitle {
+        @include SFRegular($dop-2, $size-x);
+
+        padding-bottom: 16px;
+        text-align: center;
+    }
+
+    &__link {
+        font-family: "SF Pro Display", serif;
+        font-size: $size-x;
+        text-align: center;
+        letter-spacing: -0.01em;
+        text-decoration-line: underline;
+
+        &_color-purpure {
+            color: #b620fd;
+        }
+
+        &_color-orange {
+            color: #fd6b20;
+        }
+
+        &_color-green {
+            color: #00993f;
+        }
+
+        &_color-blue {
+            color: #1e99e7;
+        }
+    }
+}
