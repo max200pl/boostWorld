@@ -1,0 +1,84 @@
+.product-list-catalog {
+    &__wrapper {
+        padding: 40px 0 80px;
+    }
+}
+
+.product-list {
+    @include border;
+
+    padding: 16px 14px 19px 14px;
+
+    &__title {
+        @include TTInterfaces($dop-text, $size-m);
+
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        margin-bottom: 12px;
+    }
+}
+
+.product-sorting {
+    @include border;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 47px;
+    padding: 13px 16px 15px;
+    margin-bottom: 12px;
+
+    &__chose {
+        @include SFRegular($dop-text_2, $size-m);
+
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 10px;
+        min-width: 60px;
+        padding: 10px 0;
+    }
+
+    &__select {
+        @include SFRegular($dop-text, $size-m);
+
+        line-height: 1;
+        width: 100%;
+        border: none;
+        padding: 10px  0  10px 50px;
+        outline: none;
+        cursor: pointer;
+    }
+
+    &__sort-group {
+        @include SFRegular($dop-text_2, $size-m);
+    }
+}
+
+.product-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: -6px;
+
+    &__categories {
+        @include SFRegular($dop-text_2, $size-m);
+        @include border;
+
+        margin: 6px;
+        padding: 6px 10px;
+        text-decoration: none;
+    }
+}
+
+.active-categories {
+    @include SFRegular($dop-text, $size-m);
+
+    padding: 6px 10px 6px 28px;
+    background-color: $line-light;
+    background-image: url(../img/svg/product-list-catalog/product-list-catalog_close.svg);
+    background-repeat: no-repeat;
+    background-position: 8% 50%;
+}
