@@ -1,0 +1,116 @@
+.product-list-recomendation {
+    &__title {
+        @include TTInterfaces($dop-text, $size-xxl);
+
+        text-align: center;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        padding: 40px 0 20px;
+
+        & > span {
+            color: $accent_1;
+        }
+    }
+
+    .products-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        margin: 0 -10px;
+
+        & .product-list__col {
+            @include xl {
+                max-width: 292px;
+            }
+
+
+            @include md-lg {
+                flex-basis: 50%;
+            }
+
+
+            @include xs-md {
+                flex-basis: 100%;
+                justify-content: center;
+            }
+
+
+            flex-basis: 33.33333%;
+            padding: 10px;
+        }
+
+        & .product {
+            @include border;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            padding: 20px 15px 16px;
+
+            &__img-title {
+                max-width: 70px;
+                margin-bottom: 12px;
+            }
+
+            &__img-discount {
+                position: absolute;
+                top: 0;
+                right: 22px;
+                max-width: 40px;
+            }
+
+            &__title {
+                @include TTInterfaces($dop-text, $size-m);
+
+                margin-bottom: 10px;
+                line-height: 86%;
+                letter-spacing: -0.035em;
+            }
+
+            &__text {
+                @include TTInterfaces($dop-1, $size-sm);
+
+                margin-bottom: 16px;
+            }
+
+            &__buy {
+                @include SFRegular($white, $size-sm);
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                min-height: 38px;
+                margin-bottom: 8px;
+                background-color: $accent_1;
+                border: 1px solid $accent_1;
+                border-radius: $radius;
+                cursor: pointer;
+
+                &-text {
+                    margin: 0 3px 0 6px;
+                }
+
+                &-coast {
+                    font-weight: 700;
+                }
+            }
+
+            &__add {
+                @include SFRegular($dop-text, $size-sm);
+
+                background: $line-light;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                min-height: 38px;
+                background-color: $line-light;
+                border: 1px solid $line-light;
+                border-radius: $radius;
+                cursor: pointer;
+            }
+        }
+    }
+}
