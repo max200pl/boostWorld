@@ -1,5 +1,20 @@
+.product-list-catalog__aside-menu {
+    @include xs-lg {
+        margin-right: 0;
+        margin-bottom: 19px;
+    }
+
+
+    margin-right: 20px;
+}
+
 .product-list-catalog {
     &__wrapper {
+        @include xs-lg {
+            flex-wrap: wrap;
+        }
+
+
         display: flex;
         padding: 40px 0 80px;
     }
@@ -7,6 +22,10 @@
 
 .product-filter-panel {
     @include border;
+    @include xs-lg {
+        max-width: 100%;
+    }
+
 
     min-width: 300px;
     max-width: 300px;
