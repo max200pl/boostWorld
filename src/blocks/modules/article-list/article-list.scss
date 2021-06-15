@@ -221,7 +221,7 @@
 
     &__col {
         @include xl {
-            max-width: 290px;
+            flex-basis: 25%;
         }
 
 
