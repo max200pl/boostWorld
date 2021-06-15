@@ -30,11 +30,22 @@
         }
 
 
+        @include lg-xl {
+            flex-basis: 33.333%;
+        }
+
+
         @include xs-md {
             flex-basis: 100%;
             justify-content: center;
         }
 
+
+        &_catalog {
+            @include lg-xl {
+                flex-basis: 50%;
+            }
+        }
 
         flex-basis: 33.33333%;
         padding: 10px;
