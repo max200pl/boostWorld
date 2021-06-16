@@ -250,21 +250,22 @@
         }
 
         & > ul > li {
-            @include TTInterfaces($dop-2, $size-m);
-
             position: relative;
-            line-height: 86%;
-            letter-spacing: -0.035em;
-            padding-bottom: 18px;
             cursor: pointer;
             padding-left: 24px;
+            width: 100%;
+            height: 39px;
 
             & > a {
                 @include TTInterfaces($dop-2, $size-m);
 
+                display: block;
+                width: 100%;
                 text-decoration: none;
+                height: 100%;
                 line-height: 86%;
                 letter-spacing: -0.035em;
+                cursor: pointer;
 
                 &.active {
                     color: $white;
