@@ -1,0 +1,62 @@
+.boost {
+    background: $dop-text;
+    position: relative;
+    overflow: hidden;
+
+    &__bg-img {
+        position: absolute;
+    }
+
+    &__wrapper {
+        display: flex;
+        position: relative;
+        min-height: 465px;
+    }
+}
+
+.boost-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__wrapper {
+        @include xs-md {
+            max-width: 320px;
+        }
+
+
+        position: relative;
+        max-width: 367px;
+    }
+
+    &__icon-img {
+        @include xs-md {
+            top: 0;
+            right: 0;
+        }
+
+
+        position: absolute;
+        top: -35px;
+        right: -35px;
+    }
+
+    &__intro-title {
+        @include TTInterfaces($white, $size-xxl);
+
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        margin-bottom: 16px;
+    }
+
+    &__title_orange {
+        color: $accent_4;
+    }
+
+    &__intro-subTitle {
+        @include SFRegular($dop-2, $size-sm);
+
+        color: $white;
+    }
+}
