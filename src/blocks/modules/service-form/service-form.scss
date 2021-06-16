@@ -1,1 +1,52 @@
+.service-form {
+    @include border;
 
+    border-color: $dop-text_1;
+    display: flex;
+    align-self: flex-end;
+    background: $dop-text;
+
+    &__start {
+        min-width: 366px;
+        padding: 19px 21px 15px 22px;
+    }
+
+    &__title {
+        @include TTInterfaces($white, $size-sl);
+
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        padding-bottom: 12px;
+    }
+
+    &__group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 17px;
+    }
+
+    &__select {
+        appearance: none;
+        outline: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin-left: 12px;
+    }
+
+    &__footer {}
+
+    &__total {}
+
+    &__total-text {}
+
+    &__total-coast {}
+
+    &__end {
+        @include border;
+
+        border-color: $dop-text_1;
+        border-width: 0 0 0 1px;
+        border-radius: 0 0 0 0;
+    }
+}
