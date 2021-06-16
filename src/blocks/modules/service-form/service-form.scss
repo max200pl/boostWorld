@@ -1,18 +1,22 @@
 .service-form {
     @include border;
+
     @include md-lg {
         flex-basis: 100%;
+        border-radius: $radius;
+        border-width: 1px 1px 1px 1px;
     }
 
 
     @include xs-md {
         flex-wrap: wrap;
         flex-basis: 100%;
-        border: none;
-        border-color: none;
+        border-width: 0 0 0 0;
     }
 
 
+    border-radius: $radius $radius 0 0;
+    border-width: 1px 1px 0 1px;
     display: flex;
     align-self: flex-end;
     border-color: $dop-text_1;
@@ -222,6 +226,7 @@
         @include md-lg {
             flex-basis: 50%;
             min-width: 50%;
+            border-radius: 0 $radius $radius 0;
         }
 
 
@@ -240,7 +245,7 @@
         background: radial-gradient(145.71% 145.71% at 126.06% 184.33%, #fd6b20 0%, #15193f 100%);
         border-color: $dop-text_1;
         border-width: 0 0 0 1px;
-        border-radius: 0 0 0 0;
+        border-radius: 0 $radius 0 0;
         padding: 23px 0 14px 0;
 
         & > ul {
@@ -302,5 +307,150 @@
         .service-form__list-second {
             display: none;
         }
+    }
+}
+
+.additional-services {
+    @include lg-xl {
+        flex-wrap: wrap;
+    }
+
+
+    @include xs-lg {
+        flex-wrap: wrap;
+        padding: 29px 27px 11px 27px;
+        margin-top: 12px;
+
+        //min-height: 90px;
+    }
+
+
+    @include border;
+
+    margin-bottom: 100px;
+    border-radius: $radius 0 $radius $radius;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-color: $dop-text_1;
+    top: 50%;
+    min-height: 80px;
+    padding: 20px 50px 20px 27px;
+
+    &__title {
+        @include lg-xl {
+            padding-bottom: 22px;
+        }
+
+
+        @include xs-lg {
+            padding-bottom: 22px;
+        }
+
+
+        @include TTInterfaces($accent_4, $size-sl);
+
+        min-width: 200px;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+    }
+
+    &__wrapper {
+        @include xs-lg {
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        display: flex;
+        align-items: center;
+        margin: 0 -20px;
+    }
+
+    &__item {
+        @include xs-lg {
+            flex-basis: 50%;
+            margin-left: 0;
+            padding-bottom: 15px;
+        }
+
+
+        @include xs-md {
+            flex-basis: 1000%;
+        }
+
+
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+
+        .custom-checkbox {
+            height: 21px;
+        }
+
+        .custom-checkbox > input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        /* для элемента label, связанного с .custom-checkbox */
+        .custom-checkbox > span {
+            @include SFRegular($white, $size-sm);
+
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            cursor: pointer;
+            margin-right: 9px;
+        }
+
+        /* создание в label псевдоэлемента before со следующими стилями */
+        .custom-checkbox > span::before {
+            @include border;
+
+            border-color: $dop-text_1;
+            content: "";
+            display: inline-block;
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 21px;
+            height: 21px;
+            margin-right: 9px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+
+        /* стили для чекбокса, находящегося в состоянии checked */
+        .custom-checkbox > input:checked + span::before {
+            background-image: url(../img/svg/service-form/service-form__check.svg);
+        }
+
+        /* стили для чекбокса, находящегося в состоянии disabled */
+        .custom-checkbox > input:disabled + span::before {
+            background-color: #e9ecef;
+        }
+    }
+
+    &__info-button {
+        position: relative;
+        width: 14px;
+        height: 14px;
+        border: none;
+        padding: 0;
+        font: inherit;
+        color: inherit;
+        border-radius: $radius;
+        background-color: #15193f;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+
+        // background-size: 50% 50%;
+        background-image: url(../img/svg/service-form/service-form__info-button.svg);
+        cursor: pointer;
     }
 }
