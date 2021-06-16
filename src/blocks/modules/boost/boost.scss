@@ -8,6 +8,24 @@
     }
 
     &__wrapper {
+        @include lg-xl {
+            flex-wrap: nowrap;
+            padding-top: 40px;
+        }
+
+
+        @include md-lg {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+
+        @include xs-md {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -23,8 +41,19 @@
     justify-content: center;
 
     &__wrapper {
+        @include lg-xl {
+            padding-bottom: 40px;
+        }
+
+
+        @include md-lg {
+            padding-bottom: 40px;
+        }
+
+
         @include xs-md {
             max-width: 320px;
+            padding-bottom: 20px;
         }
 
 
