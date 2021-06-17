@@ -1,14 +1,25 @@
-var x, i, j, selElmnt, a, b, c;
+let x, i, j, selElmnt, a, b, c;
+
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
 
 for (i = 0; i < x.length; i++) {
+
+     /**
+      * x - HTMLCollection [div.custom-select]
+      * i - index elements collection - custom-select
+      * j - index elements collection - option
+      * selElmnt - first element option value "0"
+      * a - div "select-selected" 
+      * b - wrapper "select-items" drop-down list
+      * с - drop-down list
+      */
      selElmnt = x[i].getElementsByTagName("select")[0];
      /*for each element, create a new DIV that will act as the selected item:*/
      a = document.createElement("DIV");
      a.setAttribute("class", "select-selected");
      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-     x[i].appendChild(a);
+     x[i].appendChild(a); //добавляем после последнего child
      /*for each element, create a new DIV that will contain the option list:*/
      b = document.createElement("DIV");
      b.setAttribute("class", "select-items select-hide");
@@ -21,13 +32,20 @@ for (i = 0; i < x.length; i++) {
           {
                /*when an item is clicked, update the original select box,
                and the selected item:*/
-               var y, i, k, s, h;
+               /**
+                * h - div "select-selected"   
+                * s - option value "0"
+                * y - current div drop-down list
+                * i - index element drop-down list
+                * k  - collection element drop-down list
+                */
+               let h, s, y, i, k;
                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
                h = this.parentNode.previousSibling;
                for (i = 0; i < s.length; i++) {
                     if (s.options[i].innerHTML == this.innerHTML) {
                          s.selectedIndex = i;
-                         h.innerHTML = this.innerHTML;
+                         h.innerHTML = this.innerHTML; // заменяем выбранным элементом списка 
                          y = this.parentNode.getElementsByClassName("same-as-selected");
                          for (k = 0; k < y.length; k++) {
                               y[k].removeAttribute("class");
@@ -52,11 +70,21 @@ for (i = 0; i < x.length; i++) {
           this.classList.toggle("select-arrow-active");
      });
 }
+
+/**
+ * @param {object} elmnt - div 
+ */
 function closeAllSelect(elmnt)
 {
      /*a function that will close all select boxes in the document,
      except the current select box:*/
-     var x, y, i, arrNo = [];
+     /**
+      * x- wrapper "select-items" drop-down list
+      * y - current div drop-down list
+      * i - index element drop-down list
+      * arrNo - array contains drop-down list
+      */
+     let x, y, i, arrNo = [];
 
      x = document.getElementsByClassName("select-items");
      y = document.getElementsByClassName("select-selected");
