@@ -2,10 +2,9 @@
     background: $dop-text;
     position: relative;
     overflow: hidden;
-
-    &__bg-img {
-        position: absolute;
-    }
+    background-image: url(../img/service-hero/service-hero__bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &__wrapper {
         @include lg-xl {
@@ -29,6 +28,21 @@
         justify-content: space-between;
         position: relative;
         min-height: 465px;
+    }
+
+    &__footer-block {
+        @include xs-md {
+            border-radius: 40px 40px 0 0;
+        }
+
+
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        width: 100%;
+        background-color: #0f1231;
+        height: 80px;
+        border-radius: 100px 100px 0 0;
     }
 }
 
