@@ -1,7 +1,7 @@
 window.addEventListener('load', () =>
 {
 
-  if (window.location.pathname == '/pages/comment-list-small.html' || window.location.pathname == '/pages/comment-list.html') {
+  if (window.location.pathname == '/pages/comment-list-small.html' || window.location.pathname == '/pages/comment-list.html' || window.location.pathname == '/pages/product-item.html') {
     const button__prev = document.querySelector('.slider__control_prev');
     const button__next = document.querySelector('.slider__control_next');
 
@@ -55,8 +55,6 @@ window.addEventListener('load', () =>
     });
   }
 })
-
-
 
 
 

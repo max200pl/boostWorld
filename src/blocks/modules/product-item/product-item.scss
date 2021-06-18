@@ -1,12 +1,24 @@
 .product-item {
-    margin-top: 40px;
-
     &__wrapper-header {
+        @include xs-md {
+            flex-wrap: wrap;
+            margin-top: 11px;
+            margin-bottom: 0;
+        }
+
+
         display: flex;
-        justify-content: space-between;
+        margin-top: 40px;
         margin-bottom: 20px;
 
         & .slider {
+            @include xs-md {
+                margin: 0 auto;
+            }
+
+
+            margin-right: 40px;
+
             &__wrapper {
                 position: relative;
                 overflow: hidden;
@@ -14,6 +26,7 @@
 
             &__items {
                 display: flex;
+                max-width: 476px;
             }
 
             &__item {
@@ -44,45 +57,72 @@
                 justify-content: center;
                 position: absolute;
                 top: 50%;
-                width: 40px;
-                height: 50px;
+                width: 32px;
+                height: 32px;
+                border: none;
                 transform: translateY(-50%);
+                border-radius: $radius;
                 color: #fff;
-                background: rgba(0, 0, 0, 0.3);
-                opacity: 0.5;
+                background: $line-light;
                 cursor: pointer;
                 user-select: none;
             }
 
             &__control_prev {
-                left: -50px;
+                left: 23px;
             }
 
             &__control_next {
-                right: -50px;
+                right: 23px;
+            }
+        }
+    }
+
+    & .fecit-describ {
+        @include border;
+
+        &__header {
+            padding: 14px 16px 12px 19px;
+            border-bottom: 1px solid $line-light;
+        }
+
+        &__title {
+            @include SFRegular($dop-text, $size-sl);
+
+            font-weight: 600;
+            padding-bottom: 8px;
+        }
+
+        &__following-item {
+            @include SFRegular($dop-text, $size-sm);
+
+            padding-bottom: 4px;
+        }
+
+        &__paragraph {
+            @include SFRegular($dop-text, $size-sm);
+
+            padding: 16px 24px 20px 19px;
+
+            & > span {
+                font-weight: 600;
             }
         }
     }
 }
 
-/* .faceit-by {
-    &__header {
-        &__chose-option {}
+.faceit-by {
+    @include xs-md {
+        flex-basis: 100%;
+        padding-bottom: 20px;
     }
 
-    &__title {}
 
-    &__subtitle {}
-
-    &__footer {
-        &__buy {
-            &__buy-text {}
-
-            &__buy-img {}
-
-            &__buy-coast {}
-
-            &__add {}
-        }
+    @include md-lg {
+        padding-top: 0;
     }
-} */
+
+
+    flex-basis: 400px;
+    padding-top: 20px;
+}
