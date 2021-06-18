@@ -2,15 +2,47 @@
     background: $dop-text;
     position: relative;
     overflow: hidden;
-
-    &__bg-img {
-        position: absolute;
-    }
+    background-image: url(../img/service-hero/service-hero__bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &__wrapper {
+        @include lg-xl {
+            flex-wrap: nowrap;
+            padding-top: 40px;
+        }
+
+
+        @include md-lg {
+            padding-top: 40px;
+        }
+
+
+        @include xs-md {
+            padding-top: 20px;
+        }
+
+
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         position: relative;
         min-height: 465px;
+    }
+
+    &__footer-block {
+        @include xs-md {
+            border-radius: 40px 40px 0 0;
+        }
+
+
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        width: 100%;
+        background-color: #0f1231;
+        height: 80px;
+        border-radius: 100px 100px 0 0;
     }
 }
 
@@ -21,8 +53,19 @@
     justify-content: center;
 
     &__wrapper {
+        @include lg-xl {
+            padding-bottom: 40px;
+        }
+
+
+        @include md-lg {
+            padding-bottom: 40px;
+        }
+
+
         @include xs-md {
             max-width: 320px;
+            padding-bottom: 20px;
         }
 
 

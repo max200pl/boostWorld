@@ -1,0 +1,466 @@
+.service-form {
+    @include border;
+
+    @include md-lg {
+        flex-basis: 100%;
+        border-radius: $radius;
+        border-width: 1px 1px 1px 1px;
+    }
+
+
+    @include xs-md {
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        border-width: 0 0 0 0;
+        background: none;
+    }
+
+
+    margin-bottom: 42px;
+    border-radius: $radius $radius 0 0;
+    border-width: 1px 1px 0 1px;
+    display: flex;
+    align-self: flex-end;
+    border-color: $dop-text_1;
+    background: $dop-text;
+
+    &__start {
+        @include lg-xl {
+            min-width: 300px;
+        }
+
+
+        @include md-lg {
+            flex-basis: 50%;
+            min-width: 50%;
+        }
+
+
+        @include xs-md {
+            @include border;
+
+            border-color: $dop-text_1;
+            background: $dop-text;
+            flex-basis: 100%;
+            order: 2;
+            min-width: 100%;
+        }
+
+
+        min-width: 366px;
+        padding: 19px 21px 15px 22px;
+    }
+
+    &__title {
+        @include TTInterfaces($white, $size-sl);
+
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        padding-bottom: 12px;
+    }
+
+    &__group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 17px;
+    }
+
+    & .custom-select {
+        & select {
+            display: none; /*hide original SELECT element:*/
+        }
+
+        flex-grow: 1;
+        flex-shrink: 1;
+        position: relative;
+        appearance: none;
+        outline: 0;
+        margin-left: 12px;
+
+        .select-selected {
+            @include border;
+
+            @include SFRegular($dop-2, $size-m);
+
+            background-color: $dop-text;
+            border-radius: $radius $radius 0 0;
+            border-color: $dop-text_1;
+            padding: 11px 0 11px 12px;
+            cursor: pointer;
+
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                width: 8px;
+                height: 8px;
+                border-top: 1px solid $dop-2;
+                border-right: 1px solid $dop-2;
+                transform: translateY(-50%) rotate(135deg);
+                transition: 1s;
+            }
+
+            &.select-arrow-active:after {
+                transform: translateY(-50%) rotate(320deg);
+                border-width: 1px 1px 0 1px;
+            }
+        }
+
+        .select-items {
+            @include border;
+
+            position: absolute;
+            border-color: $dop-text_1;
+            border-radius: 0 0 $radius $radius;
+            border-width: 0 1px 1px 1px;
+            z-index: 99;
+            top: 99%;
+            right: 0;
+            left: 0;
+            height: 124px;
+            overflow-y: auto;
+            background-color: $dop-text;
+
+            & div, .select-selected {
+                @include SFRegular($dop-2, $size-m);
+
+                padding: 9px 0 9px 12px;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            & div:hover {
+                background-color: $dop-text_1;
+            }
+
+            &::-webkit-scrollbar {
+                width: 2px;
+                margin-right: 30px;
+                height: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: $dop-text_1;
+                border-radius: 0 0 $radius 0;
+                width: 2px;
+                height: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 9px;
+                background-color: #373f84;
+            }
+        }
+
+        .select-selected-bottom-rounded {
+            border-radius: $radius $radius $radius $radius;
+        }
+
+        .select-selected-bottom-square {
+            border-radius: $radius $radius 0 0;
+            border-width: 1px 1px 0 1px;
+        }
+
+        .select-hide {
+            display: none;
+        }
+    }
+
+    /*  SERVICE-FORM__FOOTER */
+
+    &__footer {
+        display: flex;
+    }
+
+    &__button {
+        @include SFRegular($white, $size-sm);
+
+        position: relative;
+        z-index: 2;
+        width: 201px;
+        height: 41px;
+        margin-right: 14px;
+        border-radius: $radius;
+        border: none;
+        box-shadow: 0 3px 0 #d04c09;
+        cursor: pointer;
+        background: url(../img/svg/service-form/service-form__plus.svg) 36px 10px no-repeat, $accent_4;
+    }
+
+    &__button-text {
+        @include SFRegular($white, $size-sm);
+
+        z-index: 1;
+    }
+
+    &__button-light {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 60px;
+        width: 60px;
+        height: 100%;
+        background: url(../img/svg/service-form/1.svg);
+        background-repeat: no-repeat;
+    }
+
+    &__total {
+        @include SFRegular($white, $size-x);
+
+        display: block;
+        max-width: 50px;
+    }
+
+    &__total-coast {
+        color: $accent_4;
+    }
+
+    &__end {
+        @include border;
+        @include lg-xl {
+            min-width: 250px;
+        }
+
+
+        @include md-lg {
+            flex-basis: 50%;
+            min-width: 50%;
+            border-radius: 0 $radius $radius 0;
+        }
+
+
+        @include xs-md {
+            @include border;
+
+            border-color: $dop-text_1;
+            background: $dop-text;
+            flex-basis: 100%;
+            min-width: 100%;
+            margin-bottom: 10px;
+        }
+
+
+        min-width: 355px;
+        background: radial-gradient(145.71% 145.71% at 126.06% 184.33%, #fd6b20 0%, #15193f 100%);
+        border-color: $dop-text_1;
+        border-width: 0 0 0 1px;
+        border-radius: 0 $radius 0 0;
+        padding: 23px 0 14px 0;
+
+        & > ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        & > ul > li {
+            position: relative;
+            cursor: pointer;
+            padding-left: 24px;
+            width: 100%;
+            height: 39px;
+
+            & > a {
+                @include TTInterfaces($dop-2, $size-m);
+
+                display: block;
+                width: 100%;
+                text-decoration: none;
+                height: 100%;
+                line-height: 86%;
+                letter-spacing: -0.035em;
+                cursor: pointer;
+
+                &.active {
+                    color: $white;
+
+                    &::before {
+                        content: "";
+                        opacity: 1;
+                        position: absolute;
+                        top: -4px;
+                        left: -2px;
+                        width: 3px;
+                        height: 27px;
+                        background-color: $accent_4;
+                    }
+                }
+            }
+
+            &::before {
+                content: "";
+                opacity: 0;
+                position: absolute;
+                top: -4px;
+                left: -2px;
+                width: 3px;
+                height: 27px;
+                background-color: $accent_4;
+            }
+
+            &:hover::before {
+                opacity: 1;
+            }
+        }
+
+        .service-form__list-second {
+            display: none;
+        }
+    }
+}
+
+.additional-services {
+    @include lg-xl {
+        flex-wrap: wrap;
+    }
+
+
+    @include xs-lg {
+        flex-wrap: wrap;
+        padding: 29px 27px 11px 27px;
+        border-radius: $radius $radius $radius $radius;
+    }
+
+
+    border-radius: $radius 0 $radius $radius;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $dop-text;
+    min-height: 80px;
+    padding: 20px 50px 20px 27px;
+
+    &__border-wrapper {
+        @include xs-lg {
+            margin-top: 12px;
+            border-radius: $radius $radius $radius $radius;
+        }
+
+
+        border-radius: $radius 0 $radius $radius;
+        position: relative;
+        z-index: 2;
+        top: -42px;
+        padding: 1px;
+        background: linear-gradient(90deg, rgba(253, 107, 32, 1) 0%, rgba(41, 47, 99, 1) 40%);
+    }
+
+    &__title {
+        @include lg-xl {
+            padding-bottom: 22px;
+        }
+
+
+        @include xs-lg {
+            padding-bottom: 22px;
+        }
+
+
+        @include TTInterfaces($accent_4, $size-sl);
+
+        min-width: 200px;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+    }
+
+    &__wrapper {
+        @include xs-lg {
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        display: flex;
+        align-items: center;
+        margin: 0 -20px;
+    }
+
+    &__item {
+        @include xs-lg {
+            flex-basis: 50%;
+            margin-left: 0;
+            padding-bottom: 15px;
+        }
+
+
+        @include xs-md {
+            flex-basis: 1000%;
+        }
+
+
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+
+        .custom-checkbox {
+            height: 21px;
+        }
+
+        .custom-checkbox > input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        /* для элемента label, связанного с .custom-checkbox */
+        .custom-checkbox > span {
+            @include SFRegular($white, $size-sm);
+
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            cursor: pointer;
+            margin-right: 9px;
+        }
+
+        /* создание в label псевдоэлемента before со следующими стилями */
+        .custom-checkbox > span::before {
+            @include border;
+
+            border-color: $dop-text_1;
+            content: "";
+            display: inline-block;
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 21px;
+            height: 21px;
+            margin-right: 9px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 50% 50%;
+        }
+
+        /* стили для чекбокса, находящегося в состоянии checked */
+        .custom-checkbox > input:checked + span::before {
+            background-image: url(../img/svg/service-form/service-form__check.svg);
+        }
+
+        /* стили для чекбокса, находящегося в состоянии disabled */
+        .custom-checkbox > input:disabled + span::before {
+            background-color: #e9ecef;
+        }
+    }
+
+    &__info-button {
+        position: relative;
+        width: 14px;
+        height: 14px;
+        border: none;
+        padding: 0;
+        font: inherit;
+        color: inherit;
+        border-radius: $radius;
+        background-color: #15193f;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+
+        // background-size: 50% 50%;
+        background-image: url(../img/svg/service-form/service-form__info-button.svg);
+        cursor: pointer;
+    }
+}
