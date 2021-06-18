@@ -1,0 +1,138 @@
+.product-item {
+    &__wrapper-header {
+        @include xs-md {
+            flex-wrap: wrap;
+            margin-top: 11px;
+            margin-bottom: 0;
+        }
+
+
+        display: flex;
+        margin-top: 40px;
+        margin-bottom: 20px;
+
+        & .slider {
+            @include xs-md {
+                margin: 0 auto;
+            }
+
+
+            margin-right: 40px;
+
+            &__wrapper {
+                position: relative;
+                overflow: hidden;
+            }
+
+            &__items {
+                display: flex;
+                max-width: 476px;
+            }
+
+            &__item {
+                flex: 0 0 100%;
+                position: relative;
+                background-color: $white;
+
+                &.active {
+                    @include keyframes(fade) {
+                        0% {
+                            opacity: 0;
+                        }
+
+                        100% {
+                            opacity: 1;
+                        }
+                    }
+
+
+                    animation: fade 0.7s;
+                }
+            }
+
+            /*  button-slider */
+            &__control {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 50%;
+                width: 32px;
+                height: 32px;
+                border: none;
+                transform: translateY(-50%);
+                border-radius: $radius;
+                color: #fff;
+                background: $line-light;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            &__control_prev {
+                left: 23px;
+            }
+
+            &__control_next {
+                right: 23px;
+            }
+        }
+    }
+
+    & .fecit-describ {
+        @include border;
+
+        &__header {
+            padding: 14px 16px 12px 19px;
+            border-bottom: 1px solid $line-light;
+        }
+
+        &__title {
+            @include SFRegular($dop-text, $size-sl);
+
+            font-weight: 600;
+            padding-bottom: 8px;
+        }
+
+        &__following-item {
+            @include SFRegular($dop-text, $size-sm);
+
+            position: relative;
+            margin-bottom: 4px;
+            padding-left: 20px;
+
+            & > img {
+                position: absolute;
+                top: 50%;
+                bottom: 0;
+                left: 0;
+                transform: translateY(-50%);
+            }
+        }
+
+        &__paragraph {
+            @include SFRegular($dop-text, $size-sm);
+
+            padding: 16px 24px 20px 19px;
+
+            & > span {
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.faceit-by {
+    @include xs-md {
+        flex-basis: 100%;
+        padding-bottom: 20px;
+    }
+
+
+    @include md-lg {
+        padding-top: 0;
+    }
+
+
+    flex-basis: 400px;
+    padding-top: 20px;
+}

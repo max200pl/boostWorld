@@ -87,6 +87,16 @@
     align-items: center;
     margin: -6px;
 
+    &_faceit-by {
+        margin: 0;
+    }
+
+    &_faceit-by > &__categories {
+        margin: 0;
+        margin-right: 6px;
+        color: $dop-text;
+    }
+
     &__categories {
         @include SFRegular($dop-text_2, $size-m);
         @include border;

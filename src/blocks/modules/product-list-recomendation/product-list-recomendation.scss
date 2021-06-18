@@ -50,78 +50,101 @@
         flex-basis: 33.33333%;
         padding: 10px;
     }
+}
 
-    .product {
-        @include border;
+.product {
+    @include border;
+
+    &_faceit-by {
+        border: none;
+        padding: 15px  0 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px 15px 16px;
+
+    &__img-title {
+        max-width: 70px;
+        margin-bottom: 12px;
+    }
+
+    &__img-discount {
+        position: absolute;
+        top: 0;
+        right: 22px;
+        max-width: 40px;
+    }
+
+    &_faceit-by > &__title {
+        @include xs-md {
+            max-width: 335px;
+        }
+
+
+        font-size: $size-l;
+    }
+
+    &__title {
+        @include TTInterfaces($dop-text, $size-m);
+
+        margin-bottom: 10px;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+    }
+
+    &__text {
+        @include SFRegular($dop-1, $size-sm);
+
+        margin-bottom: 16px;
+    }
+
+    &__buy {
+        @include SFRegular($white, $size-sm);
 
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        padding: 20px 15px 16px;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 38px;
+        margin-bottom: 8px;
+        background-color: $accent_1;
+        border: 1px solid $accent_1;
+        border-radius: $radius;
+        cursor: pointer;
 
-        &__img-title {
-            max-width: 70px;
-            margin-bottom: 12px;
+        &-text {
+            margin: 0 3px 0 6px;
         }
 
-        &__img-discount {
-            position: absolute;
-            top: 0;
-            right: 22px;
-            max-width: 40px;
+        &-coast {
+            font-weight: 700;
+        }
+    }
+
+    &__add {
+        @include SFRegular($dop-text, $size-sm);
+
+        background: $line-light;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 38px;
+        background-color: $line-light;
+        border: 1px solid $line-light;
+        border-radius: $radius;
+        cursor: pointer;
+    }
+
+    &_faceit-by > &__buy, &_faceit-by > &__add {
+        @include xs-md {
+            max-width: 100%;
         }
 
-        &__title {
-            @include TTInterfaces($dop-text, $size-m);
 
-            margin-bottom: 10px;
-            line-height: 86%;
-            letter-spacing: -0.035em;
-        }
-
-        &__text {
-            @include TTInterfaces($dop-1, $size-sm);
-
-            margin-bottom: 16px;
-        }
-
-        &__buy {
-            @include SFRegular($white, $size-sm);
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            min-height: 38px;
-            margin-bottom: 8px;
-            background-color: $accent_1;
-            border: 1px solid $accent_1;
-            border-radius: $radius;
-            cursor: pointer;
-
-            &-text {
-                margin: 0 3px 0 6px;
-            }
-
-            &-coast {
-                font-weight: 700;
-            }
-        }
-
-        &__add {
-            @include SFRegular($dop-text, $size-sm);
-
-            background: $line-light;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            min-height: 38px;
-            background-color: $line-light;
-            border: 1px solid $line-light;
-            border-radius: $radius;
-            cursor: pointer;
-        }
+        max-width: 255px;
     }
 }
