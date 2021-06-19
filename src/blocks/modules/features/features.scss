@@ -1,15 +1,19 @@
 .features {
-    @include xs-md {
-        border-radius: 0 0 40px 40px;
+    background-color: #15193f;
+
+    &__wrapper {
+        @include xs-md {
+            border-radius: 0 0 40px 40px;
+        }
+
+
+        background: url(../img/svg/features/features_bg.svg);
+        background-position: center bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #0f1231;
+        border-radius: 0 0 100px 100px;
     }
-
-
-    background: url(../img/svg/features/features_bg.svg);
-    background-position: center bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-color: #0f1231;
-    border-radius: 0 0 100px 100px;
 
     &__title-wrapper {
         @include xs-md {
@@ -21,11 +25,12 @@
         align-items: center;
         justify-content: center;
         position: relative;
-        padding: 77px 0 77px;
+        padding: 42px 0 55px;
     }
 
     &__title {
         @include xs-md {
+            margin-right: 66px;
             font-size: 36px;
         }
 
@@ -43,7 +48,7 @@
         bottom: 0;
     }
 
-    &__wrapper {
+    &__wrapper-main {
         @include xs-md {
             flex-wrap: wrap;
         }
