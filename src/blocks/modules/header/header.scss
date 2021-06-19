@@ -4,12 +4,13 @@
     }
 
 
+    margin-bottom: 41px;
     position: relative;
     width: 100%;
     background-color: $bg-font-color;
 
     .sub-menu {
-        display: none;
+        display: flex;
         justify-content: center;
         position: absolute;
         z-index: 2;
@@ -221,6 +222,7 @@
             height: 4px;
             border-top: 1px solid $dop-text;
             border-right: 1px solid $dop-text;
+            transform: translateY(-80%) rotate(135deg);
             transition: 1s;
         }
     }
