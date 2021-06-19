@@ -35,11 +35,9 @@
 }
 
 .ask__item-content {
-    font-size: $size-sm;
-    font-weight: 400;
+    @include SFRegular($dop-text, $size-sm);
+
     text-align: left;
-    line-height: 1.5em;
-    font-family: "TT Interfaces", sans-serif;
 }
 
 .faq-list__aside-menu {

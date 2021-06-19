@@ -98,6 +98,8 @@
     }
 
     &__search {
+        @include SFRegular($dop-text_2, $size-sm);
+
         height: 45px;
         margin-left: 45px;
         outline: none;
@@ -171,7 +173,7 @@
             }
 
             & .select-arrow-active:after {
-                transform: translateY(-50%) rotate(320deg);
+                transform: translateY(-50%) rotate(315deg);
             }
         }
 
@@ -210,6 +212,7 @@
     &__wrapper-item {
         @include xs-md {
             justify-content: center;
+            margin: 0;
         }
 
 
@@ -238,6 +241,7 @@
         @include xs-md {
             flex-basis: 100%;
             max-width: 330px;
+            padding: 10px 0;
         }
 
 

@@ -1,5 +1,10 @@
 .comment-preview {
     &__wrapper {
+        @include xs-md {
+            flex-wrap: wrap;
+        }
+
+
         display: flex;
         flex-basis: 50%;
         margin: 0 -6px;
