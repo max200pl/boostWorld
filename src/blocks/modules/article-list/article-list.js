@@ -1,7 +1,7 @@
-let x, i, j, selElmnt, a, b, c;
+var x, i, j, selElmnt, a, b, c;
 
 /*look for any elements with the class "custom-select":*/
-x = document.getElementsByClassName("custom-select");
+x = document.getElementsByClassName("select");
 
 for (i = 0; i < x.length; i++) {
 
@@ -39,7 +39,7 @@ for (i = 0; i < x.length; i++) {
                 * i - index element drop-down list
                 * k  - collection element drop-down list
                 */
-               let h, s, y, i, k;
+               var h, s, y, i, k;
                s = this.parentNode.parentNode.getElementsByTagName("select")[0];
                h = this.parentNode.previousSibling;
                for (i = 0; i < s.length; i++) {
@@ -84,7 +84,7 @@ function closeAllSelect(elmnt)
       * i - index element drop-down list
       * arrNo - array contains drop-down list
       */
-     let x, y, i, arrNo = [];
+     var x, y, i, arrNo = [];
 
      x = document.getElementsByClassName("select-items");
      y = document.getElementsByClassName("select-selected");
