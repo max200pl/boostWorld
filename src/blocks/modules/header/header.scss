@@ -1,15 +1,17 @@
 .header {
     @include xs-lg {
         background-color: $white;
+        margin-bottom: 0;
     }
 
 
+    margin-bottom: 41px;
     position: relative;
     width: 100%;
     background-color: $bg-font-color;
 
     .sub-menu {
-        display: none;
+        display: flex;
         justify-content: center;
         position: absolute;
         z-index: 2;
@@ -20,6 +22,11 @@
         background-color: $accent_1;
 
         .sub-menu__wrapper {
+            @include xs-lg {
+                display: none;
+            }
+
+
             display: flex;
             padding-left: 132px;
 
@@ -55,6 +62,7 @@
 
 .header__layout {
     @include xs-lg {
+        flex-wrap: nowrap;
         max-height: 54px;
         padding-top: 7px;
         padding-bottom: 7px;
@@ -221,6 +229,7 @@
             height: 4px;
             border-top: 1px solid $dop-text;
             border-right: 1px solid $dop-text;
+            transform: translateY(-80%) rotate(135deg);
             transition: 1s;
         }
     }

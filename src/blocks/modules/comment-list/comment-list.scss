@@ -1,4 +1,6 @@
 .comment-list {
+    margin-bottom: 34px;
+
     &__title {
         @include xs-md {
             max-width: 324px;

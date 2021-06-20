@@ -1,14 +1,18 @@
 .home-hero {
-    @include xs-lg {
-        border-radius: 0 0 40px 40px;
+    &__wrapper {
+        @include xs-lg {
+            border-radius: 0 0 40px 40px;
+        }
+
+
+        background-color: $dop-text;
+        border-radius: 0 0 100px 100px;
     }
 
-
-    background-color: $dop-text;
-    border-radius: 0 0 100px 100px;
+    background: #0f1231;
 }
 
-.home-hero__wrapper {
+.home-hero__header {
     @include xs-md {
         background-image: none;
     }
