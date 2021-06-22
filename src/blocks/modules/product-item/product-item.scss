@@ -1,4 +1,16 @@
 .product-item {
+    @include xs-md {
+        padding-top: 11px;
+    }
+
+
+    @include md-lg {
+        padding-top: 20px;
+    }
+
+
+    padding-top: 40px;
+
     &__wrapper-header {
         @include xs-md {
             flex-wrap: wrap;
@@ -8,7 +20,6 @@
 
 
         display: flex;
-        margin-top: 40px;
         margin-bottom: 20px;
 
         & .slider {
