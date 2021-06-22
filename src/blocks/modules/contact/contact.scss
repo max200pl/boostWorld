@@ -1,5 +1,20 @@
 .contact {
     &__wrapper {
+        @include md-lg {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+
+        @include xs-md {
+            flex-wrap: wrap;
+            margin-top: 14px;
+            margin-bottom: 22px;
+        }
+
+
         display: flex;
+        margin-top: 40px;
+        margin-bottom: 80px;
     }
 }

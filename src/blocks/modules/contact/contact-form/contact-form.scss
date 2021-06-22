@@ -2,8 +2,19 @@
 
 .contact__form {
     @include border;
+    @include md-lg {
+        min-width: 50%;
+        margin-right: 23px;
+    }
 
-    flex-basis: 504px;
+
+    @include xs-md {
+        min-width: 100%;
+        margin-right: 0;
+    }
+
+
+    min-width: 504px;
     margin-right: 56px;
     padding: 20px 18px 19px 20px;
 
@@ -44,6 +55,7 @@
 
             width: 100%;
             vertical-align: middle;
+            background-color: $white;
             color: #15193f;
             padding: 13px 14px;
             font-family: "SF Pro Display", serif;
