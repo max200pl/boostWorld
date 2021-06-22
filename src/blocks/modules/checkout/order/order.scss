@@ -1,0 +1,202 @@
+.order {
+    @include xs-md {
+        margin-right: 0;
+    }
+
+
+    display: flex;
+    flex-direction: column;
+    max-width: 393px;
+    margin-right: 20px;
+
+    &__head {
+        @include TTInterfaces($dop-text, $size-sl);
+
+        margin: 0;
+        padding: 20px 0 16px;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+    }
+}
+
+.order-item {
+    @include border;
+
+    position: relative;
+    padding: 9px 11px 15px 11px;
+    margin-bottom: 8px;
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__description {
+        margin-left: 12px;
+    }
+
+    &__label {
+        position: absolute;
+        top: 0;
+        right: 30px;
+    }
+
+    &__sprite-img {
+        position: relative;
+        max-width: 37px;
+    }
+
+    &__sprite-img > img:nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__sprite-img > img:nth-child(3) {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    & .order-item__title {
+        @include SFRegular($dop-text, $size-m);
+
+        font-weight: 600;
+        padding-bottom: 6px;
+    }
+
+    &__wrapper-total {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__coast {
+        &_s-36 {
+            font-size: 36px;
+        }
+
+        @include TTInterfaces($accent_1, $size-sm);
+
+        line-height: 86%;
+        letter-spacing: -0.035em;
+    }
+
+    &__coast-discounter {
+        @include TTInterfaces($dop-text, $size-m);
+
+        margin-left: 7px;
+    }
+
+    & .options-item {
+        &_border-bottom {
+            border-bottom: 1px solid #e4e5ed;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+
+        &__options { /* SF Regular/16px */
+            font-family: "SF Pro Display", serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+
+            /* or 19px */
+
+            letter-spacing: -0.01em;
+
+            /* Background & Font */
+
+            color: #15193f;
+        }
+
+        &__options-percent {
+            /* SF Semibold/16px */
+            font-family: " SF Pro Display", serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 120%;
+
+            /* or 19px */
+
+            text-align: right;
+            letter-spacing: -0.01em;
+
+            /* Accent #1 */
+
+            color: #0038ff;
+        }
+    }
+
+    &__options {
+        /* SF Regular/16px */
+
+        font-family: "SF Pro Display", serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+
+        /* or 19px */
+
+        letter-spacing: -0.01em;
+
+        /* Background & Font */
+
+        color: #15193f;
+    }
+}
+
+.promocode-order {
+    display: flex;
+    align-items: center;
+    height: 47px;
+
+    & > input[type=text] {
+        @include border;
+
+        flex: 1 1;
+        height: 47px;
+        padding: 13px 16px 15px;
+        font-family: "SF Pro Display", serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: #15193f;
+
+        &::placeholder {
+            padding: 13px 0 15px;
+            font-family: "SF Pro Display", serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: -0.01em;
+            color: #15193f;
+        }
+    }
+
+    & > button {
+        position: relative;
+        width: 47px;
+        height: 47px;
+        border: none;
+        padding: 0;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        cursor: pointer;
+
+        & > img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
