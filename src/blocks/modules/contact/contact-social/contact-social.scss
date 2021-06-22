@@ -39,9 +39,12 @@
 
     &__links-item {
         @include border;
+        @include xs-lg {
+            flex-basis: 100%;
+        }
+
 
         display: flex;
-        flex-basis: 100%;
         align-items: center;
         margin: 7px;
         padding: 12px 15px;
