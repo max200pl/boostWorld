@@ -1,0 +1,245 @@
+.checkout-form {
+    flex-basis: 100%;
+
+    &__title {
+        padding: 20px 0 16px;
+        font-family: "TT Interfaces", serif;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        color: #15193f;
+    }
+
+    &__wrapper {
+        @include xs-lg {
+            padding: 15px;
+        }
+
+
+        @include border;
+
+        display: flex;
+        flex-direction: column;
+        padding: 21px;
+    }
+
+    &__group {
+        @include border;
+
+        margin-bottom: 9px;
+    }
+
+    &__input {
+        vertical-align: middle;
+        border-radius: $radius;
+        width: 100%;
+        min-height: 45px;
+        border: none;
+        padding: 0 14px;
+        font-family: "SF Pro Display", serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: -0.01em;
+        color: #15193f;
+
+        &::placeholder {
+            font-family: "SF Pro Display", serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: -0.01em;
+            color: #848593;
+            border: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__textarea {
+        border-radius: $radius;
+        display: block;
+        width: 100%;
+        height: 92px;
+        overflow: auto;
+        border: none;
+        padding: 13px 14px;
+        font-family: "SF Pro Display", serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: #15193f;
+        resize: none;
+
+        &::placeholder {
+            max-height: 100%;
+            font-family: "SF Pro Display", serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: -0.01em;
+            color: #848593;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__checkbox {
+        display: flex;
+        padding-bottom: 18px;
+        align-items: center;
+
+        & > input {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            width: 21px;
+            height: 21px;
+        }
+
+        & > span {
+            display: flex;
+            align-items: center;
+            user-select: none;
+            cursor: pointer;
+            font-family: "SF Pro Display", serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: -0.01em;
+            color: #15193f;
+        }
+
+        & > span::before {
+            @include border;
+
+            content: "";
+            display: block;
+            min-width: 21px;
+            min-height: 21px;
+            border-color: #e4e5ed;
+            margin-right: 9px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        & > input:checked + span::before {
+            background-image: url(../img/svg/checkout/form__checkbox.svg);
+        }
+
+        & > input:disabled + span::before {
+            background-color: #e9ecef;
+        }
+    }
+
+    //checkout-form__footer
+    &__footer {
+        @include xs-lg {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            & > button {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                max-width: 152px;
+                border-radius: 21px;
+            }
+        }
+
+
+        display: flex;
+        flex-direction: column;
+
+        & > :nth-child(2) {
+            @include xs-lg {
+                margin-left: 10px;
+            }
+
+
+            margin-bottom: 0;
+        }
+    }
+
+    &__button {
+        @include xs-lg {
+            margin-bottom: 0;
+        }
+
+
+        @include border;
+
+        display: flex;
+        flex: 1 1;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        padding: 9px 23px;
+        margin-bottom: 8px;
+        background-color: $white;
+
+        &_first {
+            @include border;
+
+            border-color: #635bff;
+
+            &:after {
+                @include xs-lg {
+                    display: none;
+                }
+
+
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 114px;
+                width: 100%;
+                height: 100%;
+                background-image: url(../img/svg/checkout/checkout-form__button-bg-1.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &_second {
+            @include border;
+
+            border-color: #0b41be;
+
+            &::after {
+                @include xs-lg {
+                    display: none;
+                }
+
+
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                left: 114px;
+                width: 100%;
+                height: 100%;
+                background-image: url(../img/svg/checkout/checkout-form__button-bg-2.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &__button-img2 {
+        @include xs-lg {
+            display: none;
+        }
+
+
+        margin-left: 56px;
+    }
+}
