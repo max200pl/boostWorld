@@ -140,12 +140,34 @@
                 display: block;
                 position: absolute;
                 z-index: 1;
-                top: 12px;
+                top: 13px;
                 left: 15px;
             }
 
             & select {
-                display: none; /*hide original SELECT element:*/
+                @include SFRegular(#15193f, $size-sm);
+
+                font-weight: 600;
+
+                @include border;
+
+                padding-left: 80px;
+                display: flex;
+                width: 100%;
+                height: 47px;
+
+                &:focus {
+                    outline: none;
+                }
+
+                & > option {
+                    @include border;
+
+                    font-weight: 600;
+                    background-color: $white;
+                }
+
+                /*hide original SELECT element:*/
             }
 
             & .select-selected {
