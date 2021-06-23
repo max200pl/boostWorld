@@ -1,8 +1,16 @@
 .home-header {
+    @include xs-md {
+        background-image: url(../img/home-page/home-header__bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 0 0 40px 40px;
+    }
+
+
     &__wrapper {
         @include md-lg {
             justify-content: center;
-            padding: 82px 0 112px;
+            padding: 52px 0 52px;
         }
 
 
@@ -19,18 +27,28 @@
 
         display: flex;
         align-items: flex-start;
-        padding: 164px 0 224px;
+        padding: 164px 0 123px;
     }
 
     &__title-item {
         @include xs-md {
+            min-width: 100%;
             max-width: 345px;
             margin-bottom: 22px;
             margin-right: 0;
         }
 
 
-        min-width: 164px;
+        @include md-lg {
+            min-width: 340px;
+            max-width: 345px;
+            margin-bottom: 22px;
+            margin-right: 0;
+        }
+
+
+        min-width: 367px;
+        max-width: 164px;
         margin-right: 60px;
     }
 

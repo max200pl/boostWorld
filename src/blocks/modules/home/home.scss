@@ -1,4 +1,10 @@
 .home {
+    @include xs-md {
+        background-color: #0f1231;
+        background-image: none;
+    }
+
+
     background-image: url(../img/home-page/home-header__bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
