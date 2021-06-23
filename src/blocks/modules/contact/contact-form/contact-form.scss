@@ -1,0 +1,97 @@
+/* CONTACT__FORM */
+
+.contact__form {
+    @include border;
+    @include md-lg {
+        min-width: 50%;
+        margin-right: 23px;
+    }
+
+
+    @include xs-md {
+        min-width: 100%;
+        margin-right: 0;
+    }
+
+
+    min-width: 504px;
+    margin-right: 56px;
+    padding: 20px 18px 19px 20px;
+
+    &-title {
+        margin: 0 0 20px;
+        font-family: "TT Interfaces", serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        color: #15193f;
+    }
+
+    .form {
+        &__group {
+            margin-bottom: 8px;
+        }
+
+        &__input, &__select, &__submit {
+            max-height: 45px;
+        }
+
+        &__input, &__textarea, &__select {
+            @include border;
+
+            &::placeholder {
+                font-family: "SF Pro Display", serif;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 120%;
+                letter-spacing: -0.01em;
+                color: #848593;
+                outline: none;
+                display: block;
+                box-shadow: none;
+            }
+
+            width: 100%;
+            vertical-align: middle;
+            background-color: $white;
+            color: #15193f;
+            padding: 13px 14px;
+            font-family: "SF Pro Display", serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: -0.01em;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &__textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        &__submit {
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            border: 1px solid #0038ff;
+            border-radius: 4px;
+            background-color: #0038ff;
+            padding: 13px 0;
+
+            /* SF Regular/16px */
+
+            font-family: "SF Pro Display", serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 120%;
+            letter-spacing: -0.01em;
+        }
+    }
+}
+
+/* /CONTACT__FORM */

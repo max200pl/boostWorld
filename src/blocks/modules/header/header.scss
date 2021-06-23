@@ -45,6 +45,10 @@
         }
 
         .sub-menu__link {
+            &:active {
+                text-decoration: none;
+            }
+
             @include lg-xl {
                 padding: 11px 16px 11px;
             }
@@ -82,25 +86,12 @@
 }
 
 .header__end {
-    @include sm-lg {
-        flex-basis: 200px;
-    }
-
-
-    @include xs-sm {
-        flex-basis: 160px;
-    }
-
-
     display: flex;
-    flex-basis: 339px;
     align-items: center;
-    justify-content: space-between;
 
     .currency {
         display: flex;
-
-        /* margin-right: 14px; */
+        margin-right: 15px;
 
         .currency__text {
             @include SFRegular($dop-text, $size-sm);
@@ -123,45 +114,46 @@
     }
 
     .card {
+        @include lg {
+            width: 50px;
+        }
+
+
+        @include xl {
+            width: 50px;
+        }
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: relative;
-        max-width: 50px;
-        max-height: 46px;
         border: none;
-        padding: 17px;
         cursor: pointer;
         font: inherit;
         color: inherit;
         background-color: transparent;
 
         .card__img {
-            position: absolute;
-            top: 50%;
-            margin: 0;
-            transform: translate(-50%, -50%);
+            display: block;
         }
     }
 
     .header__menu-button {
         @include xs-lg {
             display: block;
-            border: none;
-            font: inherit;
-            color: inherit;
-            background-color: transparent;
-
-            /* отображаем курсор в виде руки при наведении; некоторые
-            считают, что необходимо оставлять стрелочный вид для кнопок */
-            cursor: pointer;
         }
 
 
         display: none;
-        height: 46px;
+        height: 100%;
+        border: none;
+        padding: 0;
+        padding-left: 14px;
         cursor: pointer;
-
-        > img {
-            max-width: none;
-        }
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
     }
 }
 
@@ -240,8 +232,13 @@
         }
 
 
+        &:active {
+            text-decoration: none;
+        }
+
         @include SFRegular($dop-text, $size-sm);
 
+        text-decoration: none;
         position: relative;
         cursor: pointer;
         padding: 11px 24px 11px;
