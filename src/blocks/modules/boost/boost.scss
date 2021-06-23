@@ -1,4 +1,10 @@
 .boost {
+    @include xs-md {
+        margin-bottom: 0;
+    }
+
+
+    margin-bottom: -67px;
     background: $dop-text;
     position: relative;
     overflow: hidden;
