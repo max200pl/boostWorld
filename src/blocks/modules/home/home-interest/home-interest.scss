@@ -1,0 +1,45 @@
+.home-interest {
+    @include xs-md {
+        padding: 21px 0 32px;
+    }
+
+
+    @include md-lg {
+        padding: 30px 0 30px;
+    }
+
+
+    background: #15193f;
+    padding: 80px 0;
+
+    &__title {
+        @include xs-md {
+            margin-bottom: 13px;
+        }
+
+
+        @include md-lg {
+            padding: 30px;
+        }
+
+
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__title-text {
+        max-width: 494px;
+        font-family: "TT Interfaces", serif;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 86%;
+        text-align: center;
+        letter-spacing: -0.035em;
+        color: $white;
+
+        & > span {
+            color: $accent_1;
+        }
+    }
+}
