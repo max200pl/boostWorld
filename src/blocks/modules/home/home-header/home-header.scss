@@ -1,0 +1,63 @@
+.home-header {
+    &__wrapper {
+        @include md-lg {
+            justify-content: center;
+            padding: 82px 0 112px;
+        }
+
+
+        @include xs-md {
+            flex-wrap: wrap;
+            justify-content: start;
+            padding: 22px 0;
+
+            & > :nth-child(2) {
+                margin-bottom: 0;
+            }
+        }
+
+
+        display: flex;
+        align-items: flex-start;
+        padding: 164px 0 224px;
+    }
+
+    &__title-item {
+        @include xs-md {
+            max-width: 345px;
+            margin-bottom: 22px;
+            margin-right: 0;
+        }
+
+
+        min-width: 164px;
+        margin-right: 60px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-family: "TT Interfaces", serif;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 86%;
+        letter-spacing: -0.035em;
+        color: $white;
+
+        &-green {
+            color: $accent_2;
+        }
+
+        &-blue {
+            color: $accent_1;
+        }
+    }
+
+    &__subtitle {
+        font-family: "SF Pro Display", serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: #ffffff;
+    }
+}
