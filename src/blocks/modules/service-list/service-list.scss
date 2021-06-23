@@ -40,6 +40,10 @@
 
     &__col {
         @include md-lg {
+            &_home {
+                flex-basis: 50%;
+            }
+
             flex-basis: 33.333%;
             margin-top: 17px;
         }
