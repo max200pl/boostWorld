@@ -235,17 +235,21 @@
 
 
         @include lg-xl {
+            &_home {
+                flex-basis: 50%;
+            }
+
             flex-basis: 33.333%;
         }
 
 
         @include xs-md {
             flex-basis: 100%;
-            max-width: 330px;
             padding: 10px 0;
         }
 
 
+        border-radius: $radius $radius 0 0;
         flex-basis: 33.33333%;
         padding: 10px;
     }
@@ -258,6 +262,30 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+
+    &_home {
+        border-color: #15193f;
+
+        & > .article-item__content {
+            background: #0f1231;
+        }
+
+        & .article-item__content > .article-item__title {
+            color: $white;
+        }
+
+        & .article-item__content > .article-item__text {
+            color: #b2b7e2;
+        }
+
+        & .article-item__content > .article-item__link {
+            color: #00ffb2;
+        }
+    }
+
+    &__img {
+        border-radius: 9px 9px 0 0;
+    }
 
     &__content {
         padding: 14px 18px 15px 15px;
