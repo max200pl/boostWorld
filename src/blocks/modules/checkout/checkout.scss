@@ -1,0 +1,10 @@
+.checkout {
+    &__wrapper {
+        @include xs-md {
+            flex-wrap: wrap;
+        }
+
+
+        display: flex;
+    }
+}
