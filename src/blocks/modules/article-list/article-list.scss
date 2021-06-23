@@ -229,11 +229,6 @@
         }
 
 
-        @include md-lg {
-            flex-basis: 50%;
-        }
-
-
         @include lg-xl {
             &_home {
                 flex-basis: 50%;
@@ -243,8 +238,15 @@
         }
 
 
+        @include md-lg {
+            flex-basis: 50%;
+            max-width: 340px;
+        }
+
+
         @include xs-md {
             flex-basis: 100%;
+            max-width: 340px;
             padding: 10px 0;
         }
 
