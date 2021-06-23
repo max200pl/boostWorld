@@ -34,9 +34,15 @@
 
 @import "modules/service-form/service-form";
 
-/* page checkout */
 @import "modules/checkout/order/order";
 @import "modules/checkout/checkout-form/checkout-form";
 @import "modules/checkout/checkout";
 
-//@import "modules/checkout/checkout-form/checkout-form";
+@import "modules/contact/contact-form/contact-form";
+@import "modules/contact/contact-social/contact-social";
+@import "modules/contact/contact";
+
+@import "modules/home/home-header/home-header";
+@import "modules/home/home-service/home-service";
+@import "modules/home/home-interest/home-interest";
+@import "modules/home/home";
