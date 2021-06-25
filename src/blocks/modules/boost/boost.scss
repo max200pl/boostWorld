@@ -4,11 +4,26 @@
     }
 
 
+    &_facelt {
+        background-image: url(../img/service-hero/service-hero__bg-facelt.webp);
+    }
+
+    &_csgo {
+        background-image: url(../img/service-hero/service-hero__bg-csgo.webp);
+    }
+
+    &_esea {
+        background-image: url(../img/service-hero/service-hero__bg-esea.webp);
+    }
+
+    &_esportal {
+        background-image: url(../img/service-hero/service-hero__bg-esportal.webp);
+    }
+
     margin-bottom: -67px;
     background: $dop-text;
     position: relative;
     overflow: hidden;
-    background-image: url(../img/service-hero/service-hero__bg.webp);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -33,7 +48,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         position: relative;
-        min-height: 465px;
+        min-height: 520px;
     }
 
     &__footer-block {
@@ -61,6 +76,10 @@
     &__wrapper {
         @include lg-xl {
             padding-bottom: 40px;
+
+            &_csgo {
+                max-width: 412px;
+            }
         }
 
 
@@ -75,8 +94,12 @@
         }
 
 
+        &_esportal {
+            max-width: 420px;
+        }
+
         position: relative;
-        max-width: 367px;
+        max-width: 370px;
     }
 
     &__icon-img {
@@ -85,6 +108,29 @@
             right: 0;
         }
 
+
+        @include md-lg {
+            &_esea {
+                right: -13px;
+            }
+        }
+
+
+        @include lg-xl {
+            &_esea {
+                right: -13px;
+            }
+
+            &_esportal {
+                top: -10px;
+                right: -9px;
+            }
+        }
+
+
+        &_esea {
+            right: -13px;
+        }
 
         position: absolute;
         top: -35px;
@@ -97,10 +143,22 @@
         line-height: 86%;
         letter-spacing: -0.035em;
         margin-bottom: 16px;
-    }
 
-    &__title_orange {
-        color: $accent_4;
+        & > .boost-title__title_facelt {
+            color: $accent_4;
+        }
+
+        & > .boost-title__title_csgo {
+            color: $accent_5;
+        }
+
+        & > .boost-title__title_esea {
+            color: $accent_6;
+        }
+
+        & > .boost-title__title_esportal {
+            color: $accent_7;
+        }
     }
 
     &__intro-subTitle {

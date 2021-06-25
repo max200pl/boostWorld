@@ -27,6 +27,11 @@
     &__group {
         @include border;
 
+        &_input {
+            min-height: 45px;
+            max-height: 45px;
+        }
+
         margin-bottom: 9px;
     }
 
@@ -34,9 +39,8 @@
         vertical-align: middle;
         border-radius: $radius;
         width: 100%;
-        min-height: 45px;
         border: none;
-        padding: 0 14px;
+        padding: 12px 14px;
         font-family: "SF Pro Display", serif;
         font-weight: 400;
         font-size: 16px;

@@ -71,6 +71,18 @@
             display: none; /*hide original SELECT element:*/
         }
 
+        & > input[type="number"] {
+            @include border;
+
+            @include SFRegular($dop-2, $size-sm);
+
+            width: 100%;
+            background-color: $dop-text;
+            border-radius: $radius;
+            border-color: $dop-text_1;
+            padding: 11px 0 11px 12px;
+        }
+
         flex-grow: 1;
         flex-shrink: 1;
         position: relative;
@@ -81,7 +93,7 @@
         .select-selected {
             @include border;
 
-            @include SFRegular($dop-2, $size-m);
+            @include SFRegular($dop-2, $size-sm);
 
             background-color: $dop-text;
             border-radius: $radius $radius 0 0;
@@ -125,7 +137,7 @@
             background-color: $dop-text;
 
             & div, .select-selected {
-                @include SFRegular($dop-2, $size-m);
+                @include SFRegular($dop-2, $size-sm);
 
                 padding: 9px 0 9px 12px;
                 cursor: pointer;
@@ -178,6 +190,26 @@
     &__button {
         @include SFRegular($white, $size-sm);
 
+        &_facelt {
+            box-shadow: 0 3px 0 #d04c09;
+            background: url(../img/svg/service-form/service-form__plus.svg) 36px 10px no-repeat, $accent_4;
+        }
+
+        &_csgo {
+            box-shadow: 0 3px 0 #9911d9;
+            background: url(../img/svg/service-form/service-form__plus.svg) 36px 10px no-repeat, $accent_5;
+        }
+
+        &_esea {
+            box-shadow: 0 3px 0 #007831;
+            background: url(../img/svg/service-form/service-form__plus.svg) 36px 10px no-repeat, $accent_6;
+        }
+
+        &_esportal {
+            box-shadow: 0 3px 0 #0e79bd;
+            background: url(../img/svg/service-form/service-form__plus.svg) 36px 10px no-repeat, $accent_7;
+        }
+
         position: relative;
         z-index: 2;
         width: 201px;
@@ -185,9 +217,7 @@
         margin-right: 14px;
         border-radius: $radius;
         border: none;
-        box-shadow: 0 3px 0 #d04c09;
         cursor: pointer;
-        background: url(../img/svg/service-form/service-form__plus.svg) 36px 10px no-repeat, $accent_4;
     }
 
     &__button-text {
@@ -203,7 +233,23 @@
         right: 60px;
         width: 60px;
         height: 100%;
-        background: url(../img/svg/service-form/1.svg);
+
+        &_facelt {
+            background: url(../img/svg/service-form/service-form__button-light-1.svg);
+        }
+
+        &_csgo {
+            background: url(../img/svg/service-form/service-form__button-light-2.svg);
+        }
+
+        &_esea {
+            background: url(../img/svg/service-form/service-form__button-light-3.svg);
+        }
+
+        &_esportal {
+            background: url(../img/svg/service-form/service-form__button-light-4.svg);
+        }
+
         background-repeat: no-repeat;
     }
 
@@ -215,7 +261,21 @@
     }
 
     &__total-coast {
-        color: $accent_4;
+        &_facelt {
+            color: $accent_4;
+        }
+
+        &_csgo {
+            color: $accent_5;
+        }
+
+        &_esea {
+            color: $accent_6;
+        }
+
+        &_esportal {
+            color: $accent_7;
+        }
     }
 
     &__end {
@@ -243,8 +303,73 @@
         }
 
 
+        &_facelt {
+            background: radial-gradient(145.71% 145.71% at 126.06% 184.33%, #fd6b20 0%, #15193f 100%);
+
+            //background: radial-gradient(145.71% 145.71% at 126.06% 184.33%, #fd6b20 0%, #15193f 100%);
+
+            & > ul > li > a.active {
+                &::before {
+                    background-color: $accent_4;
+                }
+            }
+
+            & > ul > li {
+                &::before {
+                    background-color: $accent_4;
+                }
+            }
+        }
+
+        &_csgo {
+            background: radial-gradient(145.71% 145.71% at 126.06% 184.33%, #b620fd 0%, #15193f 100%);
+
+            & > ul > li > a.active {
+                &::before {
+                    background-color: $accent_5;
+                }
+            }
+
+            & > ul > li {
+                &::before {
+                    background-color: $accent_5;
+                }
+            }
+        }
+
+        &_esea {
+            background: radial-gradient(145.71% 145.71% at 126.06% 184.33%, #00993f 0%, #15193f 100%);
+
+            & > ul > li > a.active {
+                &::before {
+                    background-color: $accent_6;
+                }
+            }
+
+            & > ul > li {
+                &::before {
+                    background-color: $accent_6;
+                }
+            }
+        }
+
+        &_esportal {
+            background: radial-gradient(145.71% 145.71% at 126.06% 184.33%, #1e99e7 0%, #15193f 100%);
+
+            & > ul > li > a.active {
+                &::before {
+                    background-color: $accent_7;
+                }
+            }
+
+            & > ul > li {
+                &::before {
+                    background-color: $accent_7;
+                }
+            }
+        }
+
         min-width: 355px;
-        background: radial-gradient(145.71% 145.71% at 126.06% 184.33%, #fd6b20 0%, #15193f 100%);
         box-shadow: -16px 0 49px rgba(0, 0, 0, 0.25);
         border-color: $dop-text_1;
         border-width: 0 0 0 1px;
@@ -286,7 +411,6 @@
                         left: -2px;
                         width: 3px;
                         height: 27px;
-                        background-color: $accent_4;
                     }
                 }
             }
@@ -299,7 +423,6 @@
                 left: -2px;
                 width: 3px;
                 height: 27px;
-                background-color: $accent_4;
             }
 
             &:hover::before {
@@ -308,6 +431,10 @@
         }
 
         .service-form__list-second {
+            &_csgo {
+                display: block;
+            }
+
             display: none;
         }
     }
@@ -346,7 +473,22 @@
         z-index: 2;
         top: -42px;
         padding: 1px;
-        background: linear-gradient(90deg, rgba(253, 107, 32, 1) 0%, rgba(41, 47, 99, 1) 40%);
+
+        &_facelt {
+            background: linear-gradient(90deg, $accent_4 0%, #292f63 40%);
+        }
+
+        &_csgo {
+            background: linear-gradient(90deg, $accent_5 0%, #292f63 40%);
+        }
+
+        &_esea {
+            background: linear-gradient(90deg, $accent_6 0%, #292f63 40%);
+        }
+
+        &_esportal {
+            background: linear-gradient(90deg, $accent_7 0%, #292f63 40%);
+        }
     }
 
     &__title {
@@ -360,7 +502,21 @@
         }
 
 
-        @include TTInterfaces($accent_4, $size-sl);
+        &_facelt {
+            @include TTInterfaces($accent_4, $size-sl);
+        }
+
+        &_csgo {
+            @include TTInterfaces($accent_5, $size-sl);
+        }
+
+        &_esea {
+            @include TTInterfaces($accent_6, $size-sl);
+        }
+
+        &_esportal {
+            @include TTInterfaces($accent_7, $size-sl);
+        }
 
         min-width: 200px;
         line-height: 86%;
@@ -436,8 +592,20 @@
         }
 
         /* стили для чекбокса, находящегося в состоянии checked */
-        .custom-checkbox > input:checked + span::before {
-            background-image: url(../img/svg/service-form/service-form__check.svg);
+        .custom-checkbox_facelt > input:checked + span::before {
+            background-image: url(../img/svg/service-form/service-form__check_facelt.svg);
+        }
+
+        .custom-checkbox_csgo > input:checked + span::before {
+            background-image: url(../img/svg/service-form/service-form__check_csgo.svg);
+        }
+
+        .custom-checkbox_esea > input:checked + span::before {
+            background-image: url(../img/svg/service-form/service-form__check_esea.svg);
+        }
+
+        .custom-checkbox_esportal > input:checked + span::before {
+            background-image: url(../img/svg/service-form/service-form__check_esportal.svg);
         }
 
         /* стили для чекбокса, находящегося в состоянии disabled */
