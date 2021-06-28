@@ -5,29 +5,38 @@
      <h2 class="contact__form-title">
           Leave your information. <br> We'll get back to you shortly.
      </h2>
-     <form class="form" action="CONTACT_FORM" method="POST">
-          <div class="form__group">
-               <input class="form__input" name="name" type="text" id="input-name" placeholder="Name" required=""
-                    form="contact">
+     <form class="form" method="POST" id="contact-form" novalidate>
+          <div class="form__group success">
+               <input class="form__input" name="name" type="text" id="input-name" placeholder="Name" form="contact">
+               <i class="form__check-attention"></i>
+               <i class="form__check-ok"></i>
+               <small class="form__attention-text">Error message:</small>
           </div>
-          <div class="form__group">
+          <div class="form__group error">
                <input class="form__input" name="email" type="email" id="input-email" placeholder="Address e-mail"
-                    required="" form="contact">
+                    form="contact">
+               <i class="form__check-attention"></i>
+               <i class="form__check-ok"></i>
+               <small class="form__attention-text">Error message:</small>
           </div>
           <div class="form__group">
-               <div class="form__group-wrapper">
-                    <select class="form__select" form="contact">
-                         <option value="1">Subject</option>
-                         <option value="2">Subject1</option>
-                         <option value="3">Subject2</option>
-                         <option value="4">Subject3</option>
-                    </select>
-               </div>
+               <select class="form__select" form="contact" id="select">
+                    <option value="1">Subject</option>
+                    <option value="2">Subject1</option>
+                    <option value="3">Subject2</option>
+                    <option value="4">Subject3</option>
+               </select>
 
+               <i class="form__check-attention"></i>
+               <i class="form__check-ok"></i>
+               <small class="form__attention-text">Error message:</small>
           </div>
           <div class="form__group">
                <textarea class="form__textarea" name="messages" id="input-text" type="text" placeholder="Message"
                     form="contact"></textarea>
+               <i class="form__check-attention"></i>
+               <i class="form__check-ok"></i>
+               <small class="form__attention-text">Error message:</small>
           </div>
           <button id="form__btn" class="form__submit active-link" type="submit" form="contact">
                Send Message

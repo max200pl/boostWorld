@@ -2,7 +2,7 @@ import "./import/modules";
 import 'regenerator-runtime/runtime'
 
 
-const ajaxSend = async (formData) =>
+/* const ajaxSend = async (formData) =>
 {
      const fetchResp = await fetch('/contact', {
           method: "POST",
@@ -29,3 +29,4 @@ forms.forEach(form =>
                .catch((err) => console.log(err))
      })
 })
+ */
