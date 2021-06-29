@@ -146,11 +146,9 @@
 
             & select {
                 @include SFRegular(#15193f, $size-sm);
-
-                font-weight: 600;
-
                 @include border;
 
+                font-weight: 600;
                 padding-left: 80px;
                 display: flex;
                 width: 100%;

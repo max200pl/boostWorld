@@ -1,46 +1,57 @@
 <div class="contact__form">
-     <div class="linear-activity">
-          <div class="indeterminate"></div>
-     </div>
-     <h2 class="contact__form-title">
-          Leave your information. <br> We'll get back to you shortly.
-     </h2>
-     <form class="form" method="POST" id="contact-form" novalidate>
-          <div class="form__group success">
-               <input class="form__input" name="name" type="text" id="input-name" placeholder="Name" form="contact">
-               <i class="form__check-attention"></i>
-               <i class="form__check-ok"></i>
-               <small class="form__attention-text">Error message:</small>
+     <div class="contact__form-wrapper">
+          <div class="linear-activity">
+               <div class="indeterminate"></div>
           </div>
-          <div class="form__group error">
-               <input class="form__input" name="email" type="email" id="input-email" placeholder="Address e-mail"
-                    form="contact">
-               <i class="form__check-attention"></i>
-               <i class="form__check-ok"></i>
-               <small class="form__attention-text">Error message:</small>
-          </div>
-          <div class="form__group">
-               <select class="form__select" form="contact" id="select">
-                    <option value="1">Subject</option>
-                    <option value="2">Subject1</option>
-                    <option value="3">Subject2</option>
-                    <option value="4">Subject3</option>
-               </select>
+          <h2 class="contact__form-title">
+               Leave your information. <br> We'll get back to you shortly.
+          </h2>
+          <form class="form" method="POST" id="contact-form" novalidate>
+               <div class="form__group">
+                    <input class="form__input" name="name" type="text" id="input-name" placeholder="Name"
+                         form="contact">
+                    <i class="form__check-attention"></i>
+                    <i class="form__check-ok"></i>
+                    <small id="attention-name" class="form__attention-text">Error message:</small>
+               </div>
+               <div class="form__group">
+                    <input class="form__input" name="email" type="email" id="input-email" placeholder="Address e-mail"
+                         form="contact">
+                    <i class="form__check-attention"></i>
+                    <i class="form__check-ok"></i>
+                    <small id="attention-email" class="form__attention-text">Error message:</small>
+               </div>
+               <div class="form__group">
+                    <select class="form__select" form="contact" name="select">
+                         <option value="0">Subject</option>
+                         <option value="1">Subject1</option>
+                         <option value="2">Subject2</option>
+                         <option value="3">Subject3</option>
+                    </select>
+                    <label for="select"></label>
+                    <i class="form__check-attention"></i>
+                    <i class="form__check-ok"></i>
+                    <small id="attention-select" class="form__attention-text">Error message:</small>
+               </div>
+               <div class="form__group">
+                    <textarea class="form__textarea" name="messages" id="input-text" type="text" placeholder="Message"
+                         form="contact"></textarea>
+                    <i class="form__check-attention"></i>
+                    <i class="form__check-ok"></i>
+                    <small id="attention-textarea" class="form__attention-text">Error message:</small>
+               </div>
+               <button id="form__btn" class="form__submit active-link" type="submit" form="contact">
+                    Send Message
+               </button>
 
-               <i class="form__check-attention"></i>
-               <i class="form__check-ok"></i>
-               <small class="form__attention-text">Error message:</small>
-          </div>
-          <div class="form__group">
-               <textarea class="form__textarea" name="messages" id="input-text" type="text" placeholder="Message"
-                    form="contact"></textarea>
-               <i class="form__check-attention"></i>
-               <i class="form__check-ok"></i>
-               <small class="form__attention-text">Error message:</small>
-          </div>
-          <button id="form__btn" class="form__submit active-link" type="submit" form="contact">
-               Send Message
-          </button>
-     </form>
-</div>
-<!-- contact__form -->
+          </form>
+     </div>
+
+     <div id="ErrorAlert" class="form-error">
+          <span>Ошибка запроса.</span>
+     </div>
+     <div id="SuccessAlert" class="form-success ">
+          <span>Отправка формы успешна</span>
+     </div>
+
+</div><!-- contact__form -->

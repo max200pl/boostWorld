@@ -1,5 +1,4 @@
 import "./import/modules";
-import 'regenerator-runtime/runtime'
 
 
 /* const ajaxSend = async (formData) =>

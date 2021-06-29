@@ -45,10 +45,6 @@
         }
 
         .sub-menu__link {
-            &:active {
-                text-decoration: none;
-            }
-
             @include lg-xl {
                 padding: 11px 16px 11px;
             }
@@ -60,6 +56,10 @@
             cursor: pointer;
             padding: 11px 7px 11px;
             text-decoration: none;
+
+            &:active {
+                text-decoration: none;
+            }
         }
     }
 }
@@ -232,15 +232,15 @@
         }
 
 
-        &:active {
-            text-decoration: none;
-        }
-
         @include SFRegular($dop-text, $size-sm);
 
         text-decoration: none;
         position: relative;
         cursor: pointer;
         padding: 11px 24px 11px;
+
+        &:active {
+            text-decoration: none;
+        }
     }
 }

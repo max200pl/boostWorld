@@ -1,7 +1,6 @@
 /* CONTACT__FORM */
 
 .contact__form {
-    @include border;
     @include md-lg {
         min-width: 50%;
         margin-right: 23px;
@@ -16,65 +15,6 @@
 
     min-width: 504px;
     margin-right: 56px;
-    padding: 20px 18px 19px 20px;
-
-    & .linear-activity {
-        display: none;
-        position: absolute;
-        top: -4px;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        overflow: hidden;
-        background-color: #b3e5fc;
-        margin: 0 auto;
-
-        & > .indeterminate {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        & > .indeterminate:before {
-            content: "";
-            position: absolute;
-            height: 100%;
-            background-color: #03a9f4;
-            animation: indeterminate_first 1.5s infinite ease-out;
-        }
-
-        & > .indeterminate:after {
-            content: "";
-            position: absolute;
-            height: 100%;
-            background-color: #4fc3f7;
-            animation: indeterminate_second 1.5s infinite ease-in;
-        }
-    }
-
-    @keyframes indeterminate_first {
-        0% {
-            left: -100%;
-            width: 100%;
-        }
-
-        100% {
-            left: 100%;
-            width: 10%;
-        }
-    }
-
-    @keyframes indeterminate_second {
-        0% {
-            left: -150%;
-            width: 100%;
-        }
-
-        100% {
-            left: 100%;
-            width: 10%;
-        }
-    }
 
     &-title {
         margin: 0 0 20px;
@@ -87,6 +27,94 @@
         color: #15193f;
     }
 
+    .contact__form-wrapper {
+        @include border;
+
+        padding: 20px 18px 19px 20px;
+
+        & .linear-activity {
+            display: none;
+            position: absolute;
+            top: -4px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            overflow: hidden;
+            background-color: #b3e5fc;
+            margin: 0 auto;
+
+            & > .indeterminate {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            & > .indeterminate:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                background-color: #03a9f4;
+                animation: indeterminate_first 1.5s infinite ease-out;
+            }
+
+            & > .indeterminate:after {
+                content: "";
+                position: absolute;
+                height: 100%;
+                background-color: #4fc3f7;
+                animation: indeterminate_second 1.5s infinite ease-in;
+            }
+        }
+
+        @keyframes indeterminate_first {
+            0% {
+                left: -100%;
+                width: 100%;
+            }
+
+            100% {
+                left: 100%;
+                width: 10%;
+            }
+        }
+
+        @keyframes indeterminate_second {
+            0% {
+                left: -150%;
+                width: 100%;
+            }
+
+            100% {
+                left: 100%;
+                width: 10%;
+            }
+        }
+    }
+
+    .form-success, .form-error {
+        @include border;
+
+        width: 100%;
+        margin: 8px 0;
+        font-family: "SF Pro Display", serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        color: #590000;
+        padding: 13px 0;
+        padding-left: 16px;
+        border-radius: 4px;
+    }
+
+    .form-error {
+        background: #ffe6e6;
+    }
+
+    .form-success {
+        background: #a6fee4;
+    }
+
     .form {
         &__group {
             position: relative;
@@ -96,6 +124,7 @@
                 visibility: hidden;
                 display: block;
                 position: absolute;
+                z-index: 2;
                 top: 10px;
                 right: 10px;
                 width: 24px;
@@ -112,7 +141,7 @@
                 letter-spacing: -0.01em;
             }
 
-            &.success .form__input {
+            &.success .form__input, &.success .form__select, &.success .form__textarea {
                 border-color: #008b8b;
             }
 
@@ -128,8 +157,28 @@
                 visibility: visible;
             }
 
-            &.error .form__input {
+            &.error .form__input, &.error .form__select, &.error .form__textarea {
                 border-color: #dc143c;
+            }
+        }
+
+        &__select {
+            position: relative;
+            -webkit-appearance: none;
+            overflow: -moz-hidden-unscrollable;
+
+            & + label:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 32%;
+                right: 35px;
+                width: 8px;
+                height: 8px;
+                border-top: 1px solid #15193f;
+                border-right: 1px solid #15193f;
+                transform: translate(-50%, -50%) rotate(135deg);
+                transition: 1s;
             }
         }
 
