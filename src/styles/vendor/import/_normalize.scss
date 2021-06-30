@@ -71,7 +71,28 @@ input[type=search]::-webkit-search-results-decoration {
 input[type=search] {
     /* the webkit overrides need to stay at the top */
     -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
 
     /* your styles here */
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+    -moz-appearance: spinner-textfield;
+    -moz-appearance: spinner-textfield;
+
+    &:focus {
+        outline: none !important;
+    }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    -webkit-appearance: none;
+    -webkit-appearance: inner-spin-button;
+
+    &:focus {
+        outline: none !important;
+    }
 }
