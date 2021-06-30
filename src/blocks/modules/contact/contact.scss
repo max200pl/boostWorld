@@ -1,4 +1,6 @@
 .contact {
+    position: relative;
+
     &__wrapper {
         @include md-lg {
             margin-top: 40px;

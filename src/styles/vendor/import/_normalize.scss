@@ -59,6 +59,7 @@ button,
 textarea,
 select {
     font: inherit;
+    background: none;
 }
 
 input[type=search]::-webkit-search-decoration,
@@ -73,6 +74,21 @@ input[type=search] {
     -webkit-appearance: textfield;
 
     /* your styles here */
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    background-color: #fff;
+
+    // -webkit-text-fill-color: #fff;
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 input[type='number'] {
