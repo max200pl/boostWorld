@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function ()
 {
      let fieldFormDiv = document.querySelectorAll(".form__input, .form__select, .form__textarea");
-     const formContact = document.getElementById("contact-form");
-     const submitButton = document.getElementById("form-btn")
+     const formContact = document.querySelector("#contact-form");
+     const submitButton = document.querySelector("#form-btn")
      const form = document.querySelector("form");
-     const successAlert = document.getElementById("SuccessAlert");
-     const errorAlert = document.getElementById("ErrorAlert");
-     const linearActivity = document.getElementById("linear-activity")
+     const successAlert = document.querySelector("#SuccessAlert");
+     const errorAlert = document.querySelector("#ErrorAlert");
+     const linearActivity = document.querySelector("#linear-activity")
      const ERROR_MESSAGE =
      {
           "SIGNATURE_IS_BAD": "Token signature is bad",
@@ -51,50 +51,21 @@ document.addEventListener("DOMContentLoaded", function ()
      const emailRegex = /^(?!.*@.*@.*$)(?!.*@.*\-\-.*\..*$)(?!.*@.*\-\..*$)(?!.*@.*\-$)(.*@.+(\..{1,11})?)$/
      const selectRegex = /^[1-9]$/
 
-     const validationObject = {
-          name: {
-               validationStatus: false,
-               errorMessage: "Please enter your correct name"
-          },
-          email: {
-               validationStatus: false,
-               errorMessage: "Please enter your correct email"
-          },
-          select: {
-               validationStatus: false,
-               errorMessage: "Please choose the one you need"
-          }
-     }
 
-
-     function removeAttribute()
+     formContact.addEventListener('submit', (event) =>
      {
 
-          let isFormInvalid = Boolean(Object.values(validationObject).find(el => !el.validationStatus))
-
-          if (isFormInvalid) {
-               submitButton.disabled = true;
-          } else {
-               submitButton.disabled = false;
-          }
-     }
-
-
-     formContact.addEventListener('submit', function (event)
-     {
           event.preventDefault();
-          removeAttribute()
-
-          //=========== POST REQUEST
           const body = new FormData(form);
+
           const requestURL = '/contact'
           const headers = {
                'Content-Type': 'application/json'
           }
 
+
           function sendRequest(method, url, body = null)
           {
-               linearActivity.style.display = "block";
                return fetch(url, {
                     method: method,
                     body: JSON.stringify(body),
@@ -103,15 +74,13 @@ document.addEventListener("DOMContentLoaded", function ()
                     .then(response =>
                     {
                          if (response.ok) {
-                              form.reset();
+                              console.log('ok');
                               successAlert.style.display = "block";
-                              linearActivity.style.display = "none";
                               return response.json()
                          }
 
                          return response.json().then(error =>
                          {
-                              linearActivity.style.display = "none";
                               errorAlert.style.display = "block";
                          })
                     })
@@ -123,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function ()
 
      })
 
-
+     formValidate()
      function formValidate() 
      {
 
@@ -131,9 +100,8 @@ document.addEventListener("DOMContentLoaded", function ()
 
                field.addEventListener('blur', function ()
                {
-                    //=========== CHECK VALIDATIONS 
 
-                    let check = false
+                    let check
                     let attrName = this.name
                     let valueText = this.value;
 
@@ -143,31 +111,26 @@ document.addEventListener("DOMContentLoaded", function ()
 
                     switch (attrName) {
                          case 'name':
-                              removeAttribute()
-                              validationObject.name.validationStatus = nameRegex.test(valueText.trim())
-                              check = validationObject.name.validationStatus
+                              check = nameRegex.test(valueText.trim());
                               if (!valueText) {
-                                   check = false
+                                   attentionName.innerHTML = "Please enter your name";
                               } else if (!check) {
-                                   attentionName.innerHTML = validationObject.name.errorMessage
+                                   attentionName.innerHTML = "Please enter your correct name";
                               }
                               break;
                          case 'email':
-                              removeAttribute()
-                              validationObject.email.validationStatus = emailRegex.test(valueText.trim())
-                              check = validationObject.email.validationStatus
+                              check = emailRegex.test(valueText)
                               if (!valueText) {
-                                   check = false
+                                   attentionEmail.innerHTML = "Please enter your email";
                               } else if (!check) {
-                                   attentionEmail.innerHTML = validationObject.email.errorMessage
+                                   attentionEmail.innerHTML = "Please enter your correct email";
                               }
+
                               break;
                          case 'select':
-                              removeAttribute()
-                              validationObject.select.validationStatus = selectRegex.test(valueText.trim())
-                              check = validationObject.select.validationStatus
+                              check = selectRegex.test(valueText)
                               if (!check) {
-                                   attentionSelect.innerHTML = validationObject.select.errorMessage;
+                                   attentionSelect.innerHTML = "Please choose the one you need";
                               }
                               break;
                          case 'messages':
@@ -185,5 +148,4 @@ document.addEventListener("DOMContentLoaded", function ()
                })
           }
      }
-     formValidate()
 })
