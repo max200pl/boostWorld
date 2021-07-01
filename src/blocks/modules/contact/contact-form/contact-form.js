@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function ()
 {
      let fieldFormDiv = document.querySelectorAll(".form__input, .form__select, .form__textarea");
-     const formContact = document.querySelector("#contact-form");
-     const submitButton = document.querySelector("#form-btn")
+     const formContact = document.getElementById("contact-form");
+     const submitButton = document.getElementById("form-btn")
      const form = document.querySelector("form");
-     const successAlert = document.querySelector("#SuccessAlert");
-     const errorAlert = document.querySelector("#ErrorAlert");
-     const linearActivity = document.querySelector("#linear-activity")
+     const successAlert = document.getElementById("SuccessAlert");
+     const errorAlert = document.getElementById("ErrorAlert");
+     const linearActivity = document.getElementById("linear-activity")
      const ERROR_MESSAGE =
      {
           "SIGNATURE_IS_BAD": "Token signature is bad",
@@ -51,21 +51,50 @@ document.addEventListener("DOMContentLoaded", function ()
      const emailRegex = /^(?!.*@.*@.*$)(?!.*@.*\-\-.*\..*$)(?!.*@.*\-\..*$)(?!.*@.*\-$)(.*@.+(\..{1,11})?)$/
      const selectRegex = /^[1-9]$/
 
+     const validationObject = {
+          name: {
+               validationStatus: false,
+               errorMessage: "Please enter your correct name"
+          },
+          email: {
+               validationStatus: false,
+               errorMessage: "Please enter your correct email"
+          },
+          select: {
+               validationStatus: false,
+               errorMessage: "Please choose the one you need"
+          }
+     }
 
-     formContact.addEventListener('submit', (event) =>
+
+     function removeAttribute()
      {
 
-          event.preventDefault();
-          const body = new FormData(form);
+          let isFormInvalid = Boolean(Object.values(validationObject).find(el => !el.validationStatus))
 
+          if (isFormInvalid) {
+               submitButton.disabled = true;
+          } else {
+               submitButton.disabled = false;
+          }
+     }
+
+
+     formContact.addEventListener('submit', function (event)
+     {
+          event.preventDefault();
+          removeAttribute()
+
+          //=========== POST REQUEST
+          const body = new FormData(form);
           const requestURL = '/contact'
           const headers = {
                'Content-Type': 'application/json'
           }
 
-
           function sendRequest(method, url, body = null)
           {
+               linearActivity.style.display = "block";
                return fetch(url, {
                     method: method,
                     body: JSON.stringify(body),
@@ -74,13 +103,15 @@ document.addEventListener("DOMContentLoaded", function ()
                     .then(response =>
                     {
                          if (response.ok) {
-                              console.log('ok');
+                              form.reset();
                               successAlert.style.display = "block";
+                              linearActivity.style.display = "none";
                               return response.json()
                          }
 
                          return response.json().then(error =>
                          {
+                              linearActivity.style.display = "none";
                               errorAlert.style.display = "block";
                          })
                     })
@@ -92,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function ()
 
      })
 
-     formValidate()
+
      function formValidate() 
      {
 
@@ -100,8 +131,9 @@ document.addEventListener("DOMContentLoaded", function ()
 
                field.addEventListener('blur', function ()
                {
+                    //=========== CHECK VALIDATIONS 
 
-                    let check
+                    let check = false
                     let attrName = this.name
                     let valueText = this.value;
 
@@ -111,26 +143,31 @@ document.addEventListener("DOMContentLoaded", function ()
 
                     switch (attrName) {
                          case 'name':
-                              check = nameRegex.test(valueText.trim());
+                              removeAttribute()
+                              validationObject.name.validationStatus = nameRegex.test(valueText.trim())
+                              check = validationObject.name.validationStatus
                               if (!valueText) {
-                                   attentionName.innerHTML = "Please enter your name";
+                                   check = false
                               } else if (!check) {
-                                   attentionName.innerHTML = "Please enter your correct name";
+                                   attentionName.innerHTML = validationObject.name.errorMessage
                               }
                               break;
                          case 'email':
-                              check = emailRegex.test(valueText)
+                              removeAttribute()
+                              validationObject.email.validationStatus = emailRegex.test(valueText.trim())
+                              check = validationObject.email.validationStatus
                               if (!valueText) {
-                                   attentionEmail.innerHTML = "Please enter your email";
+                                   check = false
                               } else if (!check) {
-                                   attentionEmail.innerHTML = "Please enter your correct email";
+                                   attentionEmail.innerHTML = validationObject.email.errorMessage
                               }
-
                               break;
                          case 'select':
-                              check = selectRegex.test(valueText)
+                              removeAttribute()
+                              validationObject.select.validationStatus = selectRegex.test(valueText.trim())
+                              check = validationObject.select.validationStatus
                               if (!check) {
-                                   attentionSelect.innerHTML = "Please choose the one you need";
+                                   attentionSelect.innerHTML = validationObject.select.errorMessage;
                               }
                               break;
                          case 'messages':
@@ -148,4 +185,5 @@ document.addEventListener("DOMContentLoaded", function ()
                })
           }
      }
+     formValidate()
 })
